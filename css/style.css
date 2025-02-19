@@ -216,3 +216,35 @@
 .testimonial-carousel .owl-dot.active {
   background: var(--primary);
 }
+
+.calendly-floating-button {
+  position: fixed;
+  /* By default, hide it like .back-to-top if you want to show it on scroll with JS;
+     or use "display: block" to keep it always visible. */
+  display: block;
+  
+  width: 30px;
+  height: 30px;
+  
+  text-align: center;
+  line-height: 30px; /* vertically centers the icon/text */
+  font-size: 20px;
+  
+  right: 30px;
+  bottom: 30px;
+  
+  background: #0d6efd;
+  color: #fff;
+  border-radius: 4px;
+  
+  /* Smooth hover transition, just like .back-to-top */
+  transition: background 0.5s;
+  
+  /* Ensure it’s above other elements */
+  z-index: 11;
+}
+
+/* Hover effect */
+.calendly-floating-button:hover {
+  background: #0b5ed7;
+}
