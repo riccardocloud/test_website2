@@ -242,6 +242,7 @@
   
   /* Ensure it’s above other elements */
   z-index: 11;
+  margin-right: 560px;
 }
 
 /* Hover effect */
