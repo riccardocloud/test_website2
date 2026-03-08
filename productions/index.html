@@ -36,7 +36,7 @@
     <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
 </head>
 
-<body>
+<body class="productions-page">
     <!-- Spinner Start -->
     <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
         <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">
@@ -45,7 +45,7 @@
     </div>
     <!-- Spinner End -->
 
-    <div class="container">
+    <div class="container productions-shell">
         <div class="row g-5">
 
             <!-- LEFT SIDEBAR -->
@@ -96,81 +96,144 @@
             </div>
 
             <!-- MAIN CONTENT -->
-            <div class="col-lg-8">
+            <div class="col-lg-8 productions-main">
 
                 <!-- Header / Intro -->
-                <section class="py-5 border-bottom wow fadeInUp" data-wow-delay="0.1s">
-                    <h1 class="title pb-3 mb-4">Productions</h1>
-                    <p class="mb-4">
-                        A curated selection of photo and video work. Click any image to open it in a lightbox.
+                <section class="py-5 border-bottom wow fadeInUp productions-hero" data-wow-delay="0.1s">
+                    <p class="eyebrow">Cinematic storytelling &nbsp;•&nbsp; 2016 — Present</p>
+                    <h1 class="title pb-3 mb-3">Productions</h1>
+                    <p class="lead mb-0">
+                        A living scrapbook of the films, documentaries, and branded pieces that taught me how to direct, shoot, and edit with intention.
+                        Everything below is powered entirely by GitHub Pages and vanilla front-end magic—no heavy CMS, just craft.
                     </p>
                 </section>
 
-                <!-- Portfolio (Enabled) -->
-                <section class="py-5 border-bottom wow fadeInUp" data-wow-delay="0.1s">
-                    <h1 class="title pb-3 mb-5">Portfolio</h1>
+                <!-- Shots at a glance -->
+                <section class="section-card shots-preview wow fadeInUp" data-wow-delay="0.1s">
+                    <div class="section-heading">
+                        <h2>A few of my favorite shots at a glance</h2>
+                        <a class="section-link" href="https://www.youtube.com/@riccardocloud" target="_blank" rel="noreferrer">
+                            Access the full video collection
+                        </a>
+                    </div>
+                    <div class="shots-grid">
+                        <article class="shot-card">
+                            <img src="/img/portfolio-1.jpg" alt="Skatepark in Maastricht" loading="lazy">
+                            <p>At the skatepark in Maastricht</p>
+                        </article>
+                        <article class="shot-card">
+                            <img src="/img/portfolio-2.jpg" alt="Rompermar Pisco" loading="lazy">
+                            <p>Advertisement video for <a href="https://rompermar.com/" target="_blank" rel="noreferrer">Rompermar Pisco</a></p>
+                        </article>
+                        <article class="shot-card">
+                            <img src="https://images.unsplash.com/photo-1489515217757-5fd1be406fef?auto=format&fit=crop&w=800&q=60" alt="Liege station" loading="lazy">
+                            <p>The colossal train station in Liège, Belgium</p>
+                        </article>
+                        <article class="shot-card">
+                            <img src="https://images.unsplash.com/photo-1500048993953-d23a436266cf?auto=format&fit=crop&w=800&q=60" alt="Lion's Head" loading="lazy">
+                            <p>From the tip of Lion's Head in Cape Town, South Africa</p>
+                        </article>
+                        <article class="shot-card">
+                            <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=800&q=60" alt="Western Cape" loading="lazy">
+                            <p>At the Strand, Western Cape, South Africa</p>
+                        </article>
+                        <article class="shot-card">
+                            <img src="https://images.unsplash.com/photo-1514525253161-7a46d19cd819?auto=format&fit=crop&w=800&q=60" alt="Trapsino stage" loading="lazy">
+                            <p>Grote Prijs van Rotterdam 2023 finalist <span class="highlight">Trapsino</span></p>
+                        </article>
+                    </div>
+                </section>
 
-                    <div class="row">
-                        <div class="col-12">
-                            <div class="row">
-                                <div class="col-12 text-center mb-2">
-                                    <ul class="list-inline mb-4" id="portfolio-flters">
-                                        <li class="btn btn-secondary active" data-filter="*"><i class="fa fa-star me-2"></i>All</li>
-                                        <li class="btn btn-secondary" data-filter=".photo"><i class="fa fa-camera me-2"></i>Photo</li>
-                                        <li class="btn btn-secondary" data-filter=".video"><i class="fa fa-video me-2"></i>Video</li>
-                                    </ul>
-                                </div>
-                            </div>
-
-                            <div class="row portfolio-container">
-                                <!-- Use your existing images in /img -->
-                                <div class="col-md-6 mb-4 portfolio-item photo">
-                                    <div class="position-relative overflow-hidden mb-2">
-                                        <img class="img-fluid w-100" src="/img/portfolio-1.jpg" alt="Portfolio 1">
-                                        <div class="portfolio-btn d-flex align-items-center justify-content-center">
-                                            <a href="/img/portfolio-1.jpg" data-lightbox="portfolio">
-                                                <i class="bi bi-plus text-light"></i>
-                                            </a>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="col-md-6 mb-4 portfolio-item photo">
-                                    <div class="position-relative overflow-hidden mb-2">
-                                        <img class="img-fluid w-100" src="/img/portfolio-2.jpg" alt="Portfolio 2">
-                                        <div class="portfolio-btn d-flex align-items-center justify-content-center">
-                                            <a href="/img/portfolio-2.jpg" data-lightbox="portfolio">
-                                                <i class="bi bi-plus text-light"></i>
-                                            </a>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="col-md-6 mb-4 portfolio-item video">
-                                    <div class="position-relative overflow-hidden mb-2">
-                                        <img class="img-fluid w-100" src="/img/portfolio-3.jpg" alt="Portfolio 3">
-                                        <div class="portfolio-btn d-flex align-items-center justify-content-center">
-                                            <a href="/img/portfolio-3.jpg" data-lightbox="portfolio">
-                                                <i class="bi bi-plus text-light"></i>
-                                            </a>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="col-md-6 mb-4 portfolio-item video">
-                                    <div class="position-relative overflow-hidden mb-2">
-                                        <img class="img-fluid w-100" src="/img/portfolio-4.jpg" alt="Portfolio 4">
-                                        <div class="portfolio-btn d-flex align-items-center justify-content-center">
-                                            <a href="/img/portfolio-4.jpg" data-lightbox="portfolio">
-                                                <i class="bi bi-plus text-light"></i>
-                                            </a>
-                                        </div>
-                                    </div>
-                                </div>
-
-                            </div>
+                <!-- Feature story -->
+                <section class="section-card feature-story wow fadeInUp" data-wow-delay="0.1s">
+                    <div class="story-media">
+                        <div class="video-frame">
+                            <iframe src="https://www.youtube.com/embed/1-vcErOPofQ" title="Mr Smith" loading="lazy" allowfullscreen></iframe>
                         </div>
                     </div>
+                    <div class="story-copy">
+                        <p class="eyebrow">Short Film</p>
+                        <h2>Mr. Smith</h2>
+                        <p>
+                            Mr. Smith could earnestly claim to have seen it all. But he knew that further adventures await, and so he came to Maastricht.
+                            The Speakeasy, located in a cellar in Wyck, is at once exclusive and inviting. It embodies the qualities he values most highly: intrigue,
+                            discretion and above all, a good story over a strong drink.
+                        </p>
+                        <p>
+                            The bartenders strive to convey this story for each guest through finely and thoughtfully crafted cocktails. Each drink evokes an episode of
+                            Mr. Smith's enchanted and globetrotting life.
+                        </p>
+                    </div>
+                </section>
+
+                <!-- Collaborations -->
+                <section class="section-card collaborations wow fadeInUp" data-wow-delay="0.1s">
+                    <h2 class="mb-4">Major Collaborative Projects</h2>
+                    <div class="collab-grid">
+                        <article class="collab-card">
+                            <div class="video-frame">
+                                <iframe src="https://www.youtube.com/embed/4_sJxkG2QjM" title="Royals Cup Aftermovie" loading="lazy" allowfullscreen></iframe>
+                            </div>
+                            <div class="collab-body">
+                                <h3>Royals Cup Aftermovie 2022</h3>
+                                <p>
+                                    Over three thrilling days, witness the fierce competition and vibrant festivities that define this traditional rivalry among Europe's top universities.
+                                    Shot alongside Loffe and Tim, the event is immortalized in an action-packed aftermovie, followed by a pristine music mashup by Luca Peroni.
+                                </p>
+                            </div>
+                        </article>
+                        <article class="collab-card">
+                            <div class="video-frame">
+                                <iframe src="https://www.youtube.com/embed/MW5Vly8Lsmg" title="Los Sueños" loading="lazy" allowfullscreen></iframe>
+                            </div>
+                            <div class="collab-body">
+                                <h3>Los Sueños De Los Muertos</h3>
+                                <p>
+                                    An award-winning short film shot in a Western-style rendition of Maastricht. From camera operation to drone work, every scene was an opportunity to blend storytelling with
+                                    kinetic visuals while collaborating with Christopher Jorna and Victor Moroianu.
+                                </p>
+                            </div>
+                        </article>
+                    </div>
+                </section>
+
+                <!-- Archive highlight -->
+                <section class="section-card archive wow fadeInUp" data-wow-delay="0.1s">
+                    <div class="section-heading">
+                        <h2>From some years ago…</h2>
+                    </div>
+                    <div class="video-frame">
+                        <iframe src="https://www.youtube.com/embed/CvFH_6DNRCY" title="Archive piece" loading="lazy" allowfullscreen></iframe>
+                    </div>
+                </section>
+
+                <!-- Year in film -->
+                <section class="section-card yearly-reel wow fadeInUp" data-wow-delay="0.1s">
+                    <article class="yearly-item">
+                        <div>
+                            <p class="eyebrow">Long-form recap</p>
+                            <h2>2021</h2>
+                            <p>
+                                One of my largest projects to date: a year of breath-taking scenes cut to IMANU's remix of Apashe's “I'm Fine”. Youthful energy, drones, handheld grittiness—it is all in here,
+                                stitched inside a 3-minute rush.
+                            </p>
+                        </div>
+                        <div class="video-frame">
+                            <iframe src="https://www.youtube.com/embed/flexrw3Hkz8" title="2021 reel" loading="lazy" allowfullscreen></iframe>
+                        </div>
+                    </article>
+                    <article class="yearly-item reverse">
+                        <div class="video-frame">
+                            <iframe src="https://www.youtube.com/embed/EPY2ayJ0jNk" title="Norway Paradise" loading="lazy" allowfullscreen></iframe>
+                        </div>
+                        <div>
+                            <p class="eyebrow">Travel film</p>
+                            <h2>Norway Paradise</h2>
+                            <p>
+                                A time capsule dedicated to Bergen and the wild escapes of early twenties wanderlust. Expect freezing fjord mornings, aerial fjell flyovers, and the joyful chaos of friends chasing every ray of light.
+                            </p>
+                        </div>
+                    </article>
                 </section>
 
                 <!-- Footer -->
