@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Simple Counter</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        :root {
+            color-scheme: light dark;
+        }
+        body {
+            font-family: "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+            min-height: 100vh;
+            margin: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: radial-gradient(circle at center, #1e1e2f, #111);
+            color: #f8f8f8;
+        }
+        .counter-card {
+            background: rgba(0, 0, 0, 0.45);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            border-radius: 18px;
+            padding: 3rem;
+            text-align: center;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.35);
+        }
+        h1 {
+            margin: 0 0 0.75rem;
+            font-size: 2rem;
+            letter-spacing: 0.05em;
+        }
+        #value {
+            font-size: 4.5rem;
+            font-weight: 700;
+            margin: 1.5rem 0;
+        }
+        .controls {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+        }
+        button {
+            font-size: 1rem;
+            font-weight: 600;
+            padding: 0.75rem 1.75rem;
+            border-radius: 999px;
+            border: none;
+            cursor: pointer;
+            transition: transform 120ms ease, box-shadow 120ms ease;
+        }
+        button:active {
+            transform: scale(0.97);
+        }
+        .btn-primary {
+            background: linear-gradient(135deg, #00c6ff, #0072ff);
+            color: #fff;
+            box-shadow: 0 10px 25px rgba(0, 114, 255, 0.35);
+        }
+        .btn-secondary {
+            background: rgba(255, 255, 255, 0.12);
+            color: #fff;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
+        }
+        .btn-reset {
+            background: transparent;
+            color: rgba(255, 255, 255, 0.6);
+            text-decoration: underline;
+            box-shadow: none;
+        }
+    </style>
+</head>
+<body>
+    <main class="counter-card" aria-live="polite">
+        <h1>Simple Counter</h1>
+        <div id="value">0</div>
+        <div class="controls">
+            <button class="btn-secondary" id="decrement" type="button" aria-label="Decrease">-</button>
+            <button class="btn-primary" id="increment" type="button" aria-label="Increase">+</button>
+        </div>
+        <button class="btn-reset" id="reset" type="button">Reset</button>
+    </main>
+    <script>
+        const value = document.getElementById('value');
+        const decrementBtn = document.getElementById('decrement');
+        const incrementBtn = document.getElementById('increment');
+        const resetBtn = document.getElementById('reset');
+        let count = 0;
+
+        const update = () => {
+            value.textContent = count;
+        };
+
+        decrementBtn.addEventListener('click', () => {
+            count -= 1;
+            update();
+        });
+
+        incrementBtn.addEventListener('click', () => {
+            count += 1;
+            update();
+        });
+
+        resetBtn.addEventListener('click', () => {
+            count = 0;
+            update();
+        });
+    </script>
+</body>
+</html>
