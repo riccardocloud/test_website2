@@ -1,0 +1,541 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Chit Chats — Podcast by Riccardo Murciano</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Chit Chats — Conversations at the intersection of science, culture, philosophy, and the future. A podcast by Riccardo Murciano.">
+    <meta name="keywords" content="Chit Chats, podcast, Riccardo Murciano, AI, longevity, leadership, philosophy, entrepreneurship">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Chit Chats — Podcast by Riccardo Murciano">
+    <meta property="og:description" content="11 conversations across AI, longevity, luxury, diplomacy, physics, and more.">
+    <meta property="og:type" content="website">
+
+    <!-- Favicon -->
+    <link href="/img/favicon.ico" rel="icon">
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Icon Fonts -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- Libraries -->
+    <link href="/lib/animate/animate.min.css" rel="stylesheet">
+
+    <!-- Shared Bootstrap + Site CSS -->
+    <link href="/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/css/style.css" rel="stylesheet">
+
+    <!-- Podcast-specific CSS -->
+    <link href="style.css" rel="stylesheet">
+
+    <!-- Calendly -->
+    <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
+    <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
+</head>
+
+<body class="podcast-page">
+
+    <!-- Spinner -->
+    <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+        <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">
+            <span class="sr-only">Loading...</span>
+        </div>
+    </div>
+
+    <div class="container podcast-shell">
+        <div class="row g-5">
+
+            <!-- ============================================================
+                 SIDEBAR
+                 ============================================================ -->
+            <div class="col-lg-4 sticky-lg-top vh-100">
+                <div class="d-flex flex-column h-100 text-center overflow-auto shadow">
+                    <img class="w-100 img-fluid mb-4" src="/img/profile2.jpg" alt="Riccardo Murciano">
+                    <h1 class="text-primary mt-2">Riccardo Murciano</h1>
+
+                    <div class="mb-4" style="height: 22px;">
+                        <h4 class="typed-text-output d-inline-block text-light"></h4>
+                        <div class="typed-text d-none">Podcast Host, Curious Mind, Chit Chats</div>
+                    </div>
+
+                    <div class="content">
+                        <div class="documents d-flex flex-column">
+                            <a class="btn btn-secondary mb-2" href="/" title="Back to portfolio">
+                                ← Back to Portfolio
+                            </a>
+                            <a class="btn btn-secondary mb-2" href="https://open.spotify.com/episode/60gFBHRgWOvBZdkJqBqJO3?si=42ebebcfb6ef4675" target="_blank" rel="noreferrer">
+                                <i class="fab fa-spotify mr-1"></i> Listen on Spotify
+                            </a>
+                            <a class="btn btn-secondary mb-2" href="/productions/" title="Video productions">
+                                Productions →
+                            </a>
+                            <a class="btn btn-secondary mb-2" href="https://drive.google.com/file/d/1_kqQ5y9_h48ItNaFDjYkgl7EYEaKcS2X/view?usp=sharing" target="_blank">
+                                MSc Thesis on AI
+                            </a>
+                            <a class="btn btn-secondary mb-2" href="https://drive.google.com/file/d/1GkjJH_g6sWl4nPCivufgxIyNmWt4UPGy/view?usp=drive_link" target="_blank">
+                                Paper on Quantum Computing
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="d-flex justify-content-center mt-auto mb-3">
+                        <a class="btn btn-secondary btn-square mx-1" href="https://x.com/riccardocloud" target="_blank" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a class="btn btn-secondary btn-square mx-1" href="https://www.linkedin.com/in/riccardocloud/" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                        <a class="btn btn-secondary btn-square mx-1" href="https://instagram.com/riccardocloud" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    </div>
+
+                    <div class="d-flex align-items-end justify-content-between border-top">
+                        <a href="https://drive.google.com/uc?export=download&id=1vXba-tK9WKo-3TqLbcSQbgyOIHSYv5B0" class="btn w-50 border-end">Download CV</a>
+                        <a href="mailto:riccardo.murciano@gmail.com" target="_blank" class="btn w-50">Contact Me</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ============================================================
+                 MAIN CONTENT
+                 ============================================================ -->
+            <div class="col-lg-8 podcast-main">
+
+                <!-- --------------------------------------------------------
+                     HERO
+                     -------------------------------------------------------- -->
+                <section class="podcast-hero wow fadeInUp" data-wow-delay="0.05s">
+                    <p class="eyebrow-green">Podcast by Riccardo Murciano &nbsp;·&nbsp; 2024 — Present</p>
+
+                    <h1 class="brand-title">CHIT<br><span class="accent">CHATS</span></h1>
+
+                    <!-- Waveform visual -->
+                    <svg class="hero-wave" viewBox="0 0 800 40" preserveAspectRatio="none" aria-hidden="true">
+                        <polyline
+                            points="0,20 30,6 60,34 90,10 120,30 150,4 180,36 210,12 240,28 270,5 300,22 330,38 360,14 390,30 420,7 450,32 480,16 510,34 540,9 570,26 600,3 630,28 660,14 690,36 720,8 750,24 780,18 800,20"
+                            stroke="rgba(0,184,123,0.35)"
+                            stroke-width="1.5"
+                            fill="none"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                        />
+                    </svg>
+
+                    <p class="hero-tagline">
+                        For the intellectually restless. Conversations at the crossroads of science, culture, philosophy, and what comes next.
+                    </p>
+
+                    <p class="hero-description">
+                        Every episode, one rule: go wherever the conversation leads. Chit Chats brings together thinkers, founders, scientists, artists, and decision-makers for candid exchanges on the ideas that shape how we live, work, and understand the world. No scripts. No safe answers. Just substance.
+                    </p>
+
+                    <a class="spotify-cta" href="https://open.spotify.com/episode/60gFBHRgWOvBZdkJqBqJO3?si=42ebebcfb6ef4675" target="_blank" rel="noreferrer">
+                        <!-- Spotify SVG icon -->
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="#1ED760" aria-hidden="true">
+                            <path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.479.659.301 1.02zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141C9.6 9.9 15 10.561 18.72 12.84c.361.181.54.78.241 1.2zm.12-3.36C15.24 8.4 8.82 8.16 5.16 9.301c-.6.179-1.2-.181-1.38-.721-.18-.601.18-1.2.72-1.381 4.26-1.26 11.28-1.02 15.721 1.621.539.3.719 1.02.419 1.56-.299.421-1.02.599-1.559.3z"/>
+                        </svg>
+                        Listen on Spotify
+                    </a>
+                </section>
+
+                <!-- --------------------------------------------------------
+                     METRICS
+                     -------------------------------------------------------- -->
+                <section class="wow fadeInUp" data-wow-delay="0.1s">
+                    <div class="metrics-grid">
+                        <div class="metric-item">
+                            <div class="metric-number" data-toggle="counter-up">11</div>
+                            <div class="metric-label">Episodes<br>Published</div>
+                        </div>
+                        <div class="metric-item">
+                            <div class="metric-number" data-toggle="counter-up">12</div>
+                            <div class="metric-label">Voices<br>Featured</div>
+                        </div>
+                        <div class="metric-item">
+                            <div class="metric-number" data-toggle="counter-up">10</div>
+                            <div class="metric-label">Disciplines<br>Covered</div>
+                        </div>
+                        <div class="metric-item">
+                            <div class="metric-number" data-toggle="counter-up">8</div>
+                            <div class="metric-label">Countries<br>Represented</div>
+                        </div>
+                        <div class="metric-item">
+                            <div class="metric-number" data-toggle="counter-up">15</div>
+                            <div class="metric-label">Organizations<br>Featured</div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- --------------------------------------------------------
+                     CREDIBILITY
+                     -------------------------------------------------------- -->
+                <section class="section-card wow fadeInUp" data-wow-delay="0.1s">
+                    <div class="section-heading">
+                        <h2>Organizations &amp; Institutions</h2>
+                    </div>
+
+                    <p class="eyebrow" style="margin-bottom: 1.25rem;">Companies &amp; institutions represented by guests</p>
+
+                    <div class="logo-wall mb-4">
+                        <span class="logo-chip chip-tiffany">
+                            <span class="chip-dot"></span>Tiffany &amp; Co.
+                        </span>
+                        <span class="logo-chip chip-mckinsey">
+                            <span class="chip-dot"></span>McKinsey &amp; Company
+                        </span>
+                        <span class="logo-chip chip-tesla">
+                            <span class="chip-dot"></span>Tesla
+                        </span>
+                        <span class="logo-chip chip-leonardo">
+                            <span class="chip-dot"></span>Leonardo S.p.A.
+                        </span>
+                        <span class="logo-chip chip-blue-alpha">
+                            <span class="chip-dot"></span>BlueAlpha
+                        </span>
+                        <span class="logo-chip chip-lev">
+                            <span class="chip-dot"></span>LEV Foundation
+                        </span>
+                        <span class="logo-chip chip-futurists">
+                            <span class="chip-dot"></span>London Futurists
+                        </span>
+                        <span class="logo-chip chip-avanade">
+                            <span class="chip-dot"></span>Avanade
+                        </span>
+                        <span class="logo-chip chip-frog">
+                            <span class="chip-dot"></span>Frog Design
+                        </span>
+                        <span class="logo-chip chip-highradius">
+                            <span class="chip-dot"></span>HighRadius
+                        </span>
+                        <span class="logo-chip">
+                            <span class="chip-dot" style="background:#f0c040;"></span>Courageously Curious
+                        </span>
+                        <span class="logo-chip">
+                            <span class="chip-dot" style="background:#888;"></span>Myhejo Method
+                        </span>
+                    </div>
+
+                    <div class="section-divider"></div>
+
+                    <p class="eyebrow" style="margin-bottom: 1.25rem;">Roles &amp; titles featured</p>
+
+                    <div class="roles-grid">
+                        <span class="role-pill">CEO &amp; Co-Founder</span>
+                        <span class="role-pill">Executive Director</span>
+                        <span class="role-pill">Chair</span>
+                        <span class="role-pill">High Jewelry Ambassador</span>
+                        <span class="role-pill">AI Transformation Leader</span>
+                        <span class="role-pill">Philosopher-Engineer</span>
+                        <span class="role-pill">Theoretical Physicist PhD</span>
+                        <span class="role-pill">Global Executive Leader</span>
+                        <span class="role-pill">Filmmaker &amp; Podcast Host</span>
+                        <span class="role-pill">Founder &amp; Coach</span>
+                        <span class="role-pill">Diplomat</span>
+                        <span class="role-pill">AI Consultant &amp; Engineer</span>
+                    </div>
+                </section>
+
+                <!-- --------------------------------------------------------
+                     TOPICS
+                     -------------------------------------------------------- -->
+                <section class="section-card wow fadeInUp" data-wow-delay="0.1s">
+                    <div class="section-heading">
+                        <h2>Themes &amp; Topics</h2>
+                    </div>
+                    <div class="topics-cloud">
+                        <span class="topic-pill featured">AI &amp; Machine Learning</span>
+                        <span class="topic-pill featured">Longevity Science</span>
+                        <span class="topic-pill featured">Philosophy</span>
+                        <span class="topic-pill featured">Entrepreneurship</span>
+                        <span class="topic-pill featured">Leadership</span>
+                        <span class="topic-pill">Marketing &amp; Attribution</span>
+                        <span class="topic-pill">Decision Science</span>
+                        <span class="topic-pill">Automation</span>
+                        <span class="topic-pill">Luxury &amp; Culture</span>
+                        <span class="topic-pill">Diplomacy</span>
+                        <span class="topic-pill">Physics &amp; Cosmology</span>
+                        <span class="topic-pill">AI Ethics &amp; Democracy</span>
+                        <span class="topic-pill">Futurism</span>
+                        <span class="topic-pill">Identity &amp; Spirituality</span>
+                        <span class="topic-pill">Cross-cultural Leadership</span>
+                        <span class="topic-pill">Human Decision-Making</span>
+                        <span class="topic-pill">Business Operations</span>
+                        <span class="topic-pill">Fear &amp; Resilience</span>
+                        <span class="topic-pill">African Heritage</span>
+                        <span class="topic-pill">Deep Learning</span>
+                    </div>
+                </section>
+
+                <!-- --------------------------------------------------------
+                     EPISODES — FEATURED (EP 11, 10, 09)
+                     -------------------------------------------------------- -->
+                <section class="wow fadeInUp" data-wow-delay="0.1s">
+                    <div class="section-heading" style="border-bottom: 1px solid rgba(255,255,255,0.08); padding-bottom: 1.25rem; margin-bottom: 2rem;">
+                        <h2>Latest Episodes</h2>
+                        <a class="section-link" href="https://open.spotify.com/episode/60gFBHRgWOvBZdkJqBqJO3?si=42ebebcfb6ef4675" target="_blank" rel="noreferrer">
+                            All episodes on Spotify
+                        </a>
+                    </div>
+
+                    <div class="featured-episodes">
+
+                        <!-- EP 11 — Peter Grafe -->
+                        <article class="episode-card-featured">
+                            <div class="ep-header">
+                                <div class="ep-meta-left">
+                                    <span class="ep-number">EP &nbsp;11</span>
+                                    <div class="ep-tags">
+                                        <span class="ep-tag">AI</span>
+                                        <span class="ep-tag">Marketing</span>
+                                        <span class="ep-tag">Measurement</span>
+                                    </div>
+                                </div>
+                                <span class="company-badge">BlueAlpha</span>
+                            </div>
+                            <h3 class="ep-guest-name">Peter Grafe</h3>
+                            <p class="ep-guest-role">CEO &amp; Co-Founder · BlueAlpha &nbsp;|&nbsp; Former Data Scientist, Tesla</p>
+                            <h4 class="ep-title">AI-Native Marketing, MMM, and the Agentic Future</h4>
+                            <p class="ep-summary">
+                                What happens when attribution, measurement, and media execution collapse into a single AI-native system? Peter Grafe — who built his intuition for this problem at Tesla before co-founding BlueAlpha — unpacks the real constraints of marketing mix modeling, why most analytics stacks are structurally broken, and what a truly agentic marketing stack would look like. A rare conversation that starts with a real business problem and follows the logic all the way through.
+                            </p>
+                            <a class="listen-btn" href="https://open.spotify.com/episode/60gFBHRgWOvBZdkJqBqJO3?si=42ebebcfb6ef4675" target="_blank" rel="noreferrer">
+                                <i class="fab fa-spotify"></i> Listen on Spotify
+                            </a>
+                        </article>
+
+                        <!-- EP 10 — Simon Veithen -->
+                        <article class="episode-card-featured">
+                            <div class="ep-header">
+                                <div class="ep-meta-left">
+                                    <span class="ep-number">EP &nbsp;10</span>
+                                    <div class="ep-tags">
+                                        <span class="ep-tag">Decision Science</span>
+                                        <span class="ep-tag">Psychology</span>
+                                        <span class="ep-tag">Film</span>
+                                    </div>
+                                </div>
+                                <span class="company-badge">Courageously Curious</span>
+                            </div>
+                            <h3 class="ep-guest-name">Simon Veithen</h3>
+                            <p class="ep-guest-role">Host, Courageously Curious &nbsp;|&nbsp; Filmmaker &nbsp;|&nbsp; Human Decision Science Graduate</p>
+                            <h4 class="ep-title">Curiosity, Commitment, and Courageous Choices</h4>
+                            <p class="ep-summary">
+                                Simon Veithen brings an unusual combination: a scientific grounding in how humans actually make decisions and a filmmaker's sensitivity to what those decisions reveal about who we are. This conversation digs into the gap between intention and action, why status shapes behavior far more than we admit, and what genuine commitment looks like when the comfortable option is always available. Equal parts rigorous and personal.
+                            </p>
+                            <a class="listen-btn" href="https://open.spotify.com/episode/60gFBHRgWOvBZdkJqBqJO3?si=42ebebcfb6ef4675" target="_blank" rel="noreferrer">
+                                <i class="fab fa-spotify"></i> Listen on Spotify
+                            </a>
+                        </article>
+
+                        <!-- EP 09 — Raymond Miranda -->
+                        <article class="episode-card-featured">
+                            <div class="ep-header">
+                                <div class="ep-meta-left">
+                                    <span class="ep-number">EP &nbsp;09</span>
+                                    <div class="ep-tags">
+                                        <span class="ep-tag">Philosophy</span>
+                                        <span class="ep-tag">Coaching</span>
+                                        <span class="ep-tag">Resilience</span>
+                                    </div>
+                                </div>
+                                <span class="company-badge">Myhejo Method</span>
+                            </div>
+                            <h3 class="ep-guest-name">Raymond Miranda</h3>
+                            <p class="ep-guest-role">Creator, Myhejo Method &nbsp;|&nbsp; Coach &amp; Speaker</p>
+                            <h4 class="ep-title">Fear as Data and FOOSA</h4>
+                            <p class="ep-summary">
+                                Raymond Miranda reframes fear not as something to overcome but as information — the sharpest signal that something worth doing lies on the other side. His FOOSA framework (Fear, Opposite, Obstacle, Story, Action) turns disruption into a navigation tool. This episode explores what happens when your normal breaks, why obstacles are often revelations in disguise, and how AI functions best as a mirror rather than an authority. Thought-provoking from the first minute.
+                            </p>
+                            <a class="listen-btn" href="https://open.spotify.com/episode/60gFBHRgWOvBZdkJqBqJO3?si=42ebebcfb6ef4675" target="_blank" rel="noreferrer">
+                                <i class="fab fa-spotify"></i> Listen on Spotify
+                            </a>
+                        </article>
+
+                    </div><!-- /featured-episodes -->
+                </section>
+
+                <!-- --------------------------------------------------------
+                     EPISODES — COMPACT LIST (EP 08 – EP 01)
+                     -------------------------------------------------------- -->
+                <section class="section-card wow fadeInUp" data-wow-delay="0.1s">
+                    <div class="section-heading">
+                        <h2>All Episodes</h2>
+                    </div>
+
+                    <div class="episodes-compact">
+
+                        <!-- EP 08 — David Wood -->
+                        <div class="episode-row">
+                            <div class="row-ep-number">EP<br>08</div>
+                            <div>
+                                <p class="row-guest">David Wood</p>
+                                <p class="row-title">The Reality of Longevity Escape Velocity &nbsp;—&nbsp; Chair, London Futurists &amp; Executive Director, LEV Foundation</p>
+                                <div class="row-tags">
+                                    <span class="ep-tag">Longevity</span>
+                                    <span class="ep-tag">Science</span>
+                                    <span class="ep-tag">Futurism</span>
+                                </div>
+                            </div>
+                            <a class="row-listen" href="https://open.spotify.com/episode/60gFBHRgWOvBZdkJqBqJO3?si=42ebebcfb6ef4675" target="_blank" rel="noreferrer">Listen →</a>
+                        </div>
+
+                        <!-- EP 07 — Calvin Kwok -->
+                        <div class="episode-row">
+                            <div class="row-ep-number">EP<br>07</div>
+                            <div>
+                                <p class="row-guest">Calvin Kwok</p>
+                                <p class="row-title">Diamonds, Culture, Happiness, and Sales from Hong Kong to Amsterdam &nbsp;—&nbsp; High Jewelry Ambassador, Tiffany &amp; Co.</p>
+                                <div class="row-tags">
+                                    <span class="ep-tag">Luxury</span>
+                                    <span class="ep-tag">Culture</span>
+                                    <span class="ep-tag">Identity</span>
+                                </div>
+                            </div>
+                            <a class="row-listen" href="https://open.spotify.com/episode/60gFBHRgWOvBZdkJqBqJO3?si=42ebebcfb6ef4675" target="_blank" rel="noreferrer">Listen →</a>
+                        </div>
+
+                        <!-- EP 06 — Florian Fürst -->
+                        <div class="episode-row">
+                            <div class="row-ep-number">EP<br>06</div>
+                            <div>
+                                <p class="row-guest">Florian Fürst</p>
+                                <p class="row-title">Automation, Custom Apps vs. Excel, and Starting a Business in AI Today &nbsp;—&nbsp; AI Consultant, Engineer &amp; Founder</p>
+                                <div class="row-tags">
+                                    <span class="ep-tag">AI</span>
+                                    <span class="ep-tag">Automation</span>
+                                    <span class="ep-tag">Entrepreneurship</span>
+                                </div>
+                            </div>
+                            <a class="row-listen" href="https://open.spotify.com/episode/60gFBHRgWOvBZdkJqBqJO3?si=42ebebcfb6ef4675" target="_blank" rel="noreferrer">Listen →</a>
+                        </div>
+
+                        <!-- EP 05 — Marina & Chiara -->
+                        <div class="episode-row">
+                            <div class="row-ep-number">EP<br>05</div>
+                            <div>
+                                <p class="row-guest">Marina Geymonat &amp; Chiara Aprilis</p>
+                                <p class="row-title">Exploring AI's Dual Life in Our Companies and Our Communities &nbsp;—&nbsp; AI Transformation Leader, Leonardo &amp; Philosopher-Engineer</p>
+                                <div class="row-tags">
+                                    <span class="ep-tag">AI Ethics</span>
+                                    <span class="ep-tag">Philosophy</span>
+                                    <span class="ep-tag">Policy</span>
+                                </div>
+                            </div>
+                            <a class="row-listen" href="https://open.spotify.com/episode/60gFBHRgWOvBZdkJqBqJO3?si=42ebebcfb6ef4675" target="_blank" rel="noreferrer">Listen →</a>
+                        </div>
+
+                        <!-- EP 04 — Cristiano De Nobili -->
+                        <div class="episode-row">
+                            <div class="row-ep-number">EP<br>04</div>
+                            <div>
+                                <p class="row-guest">Cristiano De Nobili, PhD</p>
+                                <p class="row-title">From Black Holes to Startups &nbsp;—&nbsp; Theoretical Physicist &amp; AI Scientist</p>
+                                <div class="row-tags">
+                                    <span class="ep-tag">Physics</span>
+                                    <span class="ep-tag">AI</span>
+                                    <span class="ep-tag">Research</span>
+                                </div>
+                            </div>
+                            <a class="row-listen" href="https://open.spotify.com/episode/60gFBHRgWOvBZdkJqBqJO3?si=42ebebcfb6ef4675" target="_blank" rel="noreferrer">Listen →</a>
+                        </div>
+
+                        <!-- EP 03 — Richard van der Meer -->
+                        <div class="episode-row">
+                            <div class="row-ep-number">EP<br>03</div>
+                            <div>
+                                <p class="row-guest">Richard van der Meer</p>
+                                <p class="row-title">Becoming a Leader Where Cultures Collide &nbsp;—&nbsp; Global Executive Leader · McKinsey · Frog Design · Avanade</p>
+                                <div class="row-tags">
+                                    <span class="ep-tag">Leadership</span>
+                                    <span class="ep-tag">Digital</span>
+                                    <span class="ep-tag">Culture</span>
+                                </div>
+                            </div>
+                            <a class="row-listen" href="https://open.spotify.com/episode/60gFBHRgWOvBZdkJqBqJO3?si=42ebebcfb6ef4675" target="_blank" rel="noreferrer">Listen →</a>
+                        </div>
+
+                        <!-- EP 02 — Bibi Deflander -->
+                        <div class="episode-row">
+                            <div class="row-ep-number">EP<br>02</div>
+                            <div>
+                                <p class="row-guest">Bibi Deflander</p>
+                                <p class="row-title">Walking With Elephants, Talking With Nations &nbsp;—&nbsp; Diplomat, Africa Heritage &amp; International Governance</p>
+                                <div class="row-tags">
+                                    <span class="ep-tag">Diplomacy</span>
+                                    <span class="ep-tag">Africa</span>
+                                    <span class="ep-tag">Spirituality</span>
+                                </div>
+                            </div>
+                            <a class="row-listen" href="https://open.spotify.com/episode/60gFBHRgWOvBZdkJqBqJO3?si=42ebebcfb6ef4675" target="_blank" rel="noreferrer">Listen →</a>
+                        </div>
+
+                        <!-- EP 01 — Riccardo (Solo) -->
+                        <div class="episode-row">
+                            <div class="row-ep-number">EP<br>01</div>
+                            <div>
+                                <p class="row-guest">Riccardo Murciano &nbsp;<span style="font-size:0.7rem; color: rgba(255,255,255,0.3); font-weight:400;">Solo</span></p>
+                                <p class="row-title">Mastering Order to Cash (O2C) &nbsp;—&nbsp; A deep-dive into enterprise finance operations</p>
+                                <div class="row-tags">
+                                    <span class="ep-tag">Business Ops</span>
+                                    <span class="ep-tag">Finance</span>
+                                    <span class="ep-tag">Process</span>
+                                </div>
+                            </div>
+                            <a class="row-listen" href="https://open.spotify.com/episode/60gFBHRgWOvBZdkJqBqJO3?si=42ebebcfb6ef4675" target="_blank" rel="noreferrer">Listen →</a>
+                        </div>
+
+                    </div><!-- /episodes-compact -->
+                </section>
+
+                <!-- --------------------------------------------------------
+                     FOOTER
+                     -------------------------------------------------------- -->
+                <section class="wow fadeIn" data-wow-delay="0.1s">
+                    <div class="bg-secondary text-light text-center p-5" style="border-radius: 24px;">
+                        <p class="eyebrow-green mb-3">Chit Chats · A Podcast by Riccardo Murciano</p>
+                        <p style="color: rgba(255,255,255,0.45); font-size: 0.85rem; margin-bottom: 1.5rem; max-width: 38ch; margin-left: auto; margin-right: auto;">
+                            New conversations drop regularly. Subscribe on Spotify so you never miss one.
+                        </p>
+                        <a class="spotify-cta" style="margin-bottom: 2rem; display: inline-flex;" href="https://open.spotify.com/episode/60gFBHRgWOvBZdkJqBqJO3?si=42ebebcfb6ef4675" target="_blank" rel="noreferrer">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="#1ED760" aria-hidden="true">
+                                <path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.479.659.301 1.02zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141C9.6 9.9 15 10.561 18.72 12.84c.361.181.54.78.241 1.2zm.12-3.36C15.24 8.4 8.82 8.16 5.16 9.301c-.6.179-1.2-.181-1.38-.721-.18-.601.18-1.2.72-1.381 4.26-1.26 11.28-1.02 15.721 1.621.539.3.719 1.02.419 1.56-.299.421-1.02.599-1.559.3z"/>
+                            </svg>
+                            Listen on Spotify
+                        </a>
+                        <div class="d-flex justify-content-center mb-4">
+                            <a class="btn btn-dark btn-square mx-1" href="https://x.com/riccardocloud" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                            <a class="btn btn-dark btn-square mx-1" href="https://www.linkedin.com/in/riccardocloud/" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                            <a class="btn btn-dark btn-square mx-1" href="https://instagram.com/riccardocloud" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        </div>
+                    </div>
+                </section>
+
+            </div><!-- /podcast-main -->
+        </div><!-- /row -->
+    </div><!-- /container -->
+
+    <!-- Back to Top -->
+    <a href="#" class="back-to-top" aria-label="Back to top"><i class="fa fa-angle-double-up"></i></a>
+
+    <!-- Calendly floating button -->
+    <a href="#"
+       class="calendly-floating-button"
+       onclick="Calendly.initPopupWidget({ url: 'https://calendly.com/riccardo-murciano/30min' }); return false;"
+       aria-label="Schedule a call">
+        <i class="fa fa-calendar"></i>
+    </a>
+
+    <!-- JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
+    <script src="/lib/wow/wow.min.js"></script>
+    <script src="/lib/typed/typed.min.js"></script>
+    <script src="/lib/easing/easing.min.js"></script>
+    <script src="/lib/waypoints/waypoints.min.js"></script>
+    <script src="/lib/counterup/counterup.min.js"></script>
+
+    <!-- Site JS (spinner, WOW, Typed, CounterUp, back-to-top) -->
+    <script src="/js/main.js"></script>
+</body>
+</html>
