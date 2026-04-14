@@ -5,9 +5,6 @@
     <title>Chit Chats — Podcast by Riccardo Murciano</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Chit Chats — Conversations at the intersection of science, culture, philosophy, and the future. A podcast by Riccardo Murciano.">
-    <meta name="keywords" content="Chit Chats, podcast, Riccardo Murciano, AI, longevity, leadership, philosophy, entrepreneurship">
-
-    <!-- Open Graph -->
     <meta property="og:title" content="Chit Chats — Podcast by Riccardo Murciano">
     <meta property="og:description" content="11 conversations across AI, longevity, luxury, diplomacy, physics, and more.">
     <meta property="og:type" content="website">
@@ -20,7 +17,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
-    <!-- Icon Fonts -->
+    <!-- Icon fonts -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
 
@@ -31,7 +28,7 @@
     <link href="/css/bootstrap.min.css" rel="stylesheet">
     <link href="/css/style.css" rel="stylesheet">
 
-    <!-- Podcast-specific CSS -->
+    <!-- Podcast CSS -->
     <link href="style.css" rel="stylesheet">
 
     <!-- Calendly -->
@@ -51,9 +48,9 @@
     <div class="container podcast-shell">
         <div class="row g-5">
 
-            <!-- ============================================================
+            <!-- ════════════════════════════════════════════════
                  SIDEBAR
-                 ============================================================ -->
+                 ════════════════════════════════════════════════ -->
             <div class="col-lg-4 sticky-lg-top vh-100">
                 <div class="d-flex flex-column h-100 text-center overflow-auto shadow">
                     <img class="w-100 img-fluid mb-4" src="/img/profile2.jpg" alt="Riccardo Murciano">
@@ -66,21 +63,19 @@
 
                     <div class="content">
                         <div class="documents d-flex flex-column">
-                            <a class="btn btn-secondary mb-2" href="/" title="Back to portfolio">
-                                ← Back to Portfolio
-                            </a>
-                            <a class="btn btn-secondary mb-2" href="https://open.spotify.com/episode/60gFBHRgWOvBZdkJqBqJO3?si=42ebebcfb6ef4675" target="_blank" rel="noreferrer">
+                            <a class="btn btn-secondary mb-2" href="/">← Back to Portfolio</a>
+                            <a class="btn btn-secondary mb-2"
+                               href="https://open.spotify.com/episode/60gFBHRgWOvBZdkJqBqJO3?si=42ebebcfb6ef4675"
+                               target="_blank" rel="noreferrer">
                                 <i class="fab fa-spotify mr-1"></i> Listen on Spotify
                             </a>
-                            <a class="btn btn-secondary mb-2" href="/productions/" title="Video productions">
-                                Productions →
-                            </a>
-                            <a class="btn btn-secondary mb-2" href="https://drive.google.com/file/d/1_kqQ5y9_h48ItNaFDjYkgl7EYEaKcS2X/view?usp=sharing" target="_blank">
-                                MSc Thesis on AI
-                            </a>
-                            <a class="btn btn-secondary mb-2" href="https://drive.google.com/file/d/1GkjJH_g6sWl4nPCivufgxIyNmWt4UPGy/view?usp=drive_link" target="_blank">
-                                Paper on Quantum Computing
-                            </a>
+                            <a class="btn btn-secondary mb-2" href="/productions/">Productions →</a>
+                            <a class="btn btn-secondary mb-2"
+                               href="https://drive.google.com/file/d/1_kqQ5y9_h48ItNaFDjYkgl7EYEaKcS2X/view?usp=sharing"
+                               target="_blank">MSc Thesis on AI</a>
+                            <a class="btn btn-secondary mb-2"
+                               href="https://drive.google.com/file/d/1GkjJH_g6sWl4nPCivufgxIyNmWt4UPGy/view?usp=drive_link"
+                               target="_blank">Paper on Quantum Computing</a>
                         </div>
                     </div>
 
@@ -97,130 +92,88 @@
                 </div>
             </div>
 
-            <!-- ============================================================
-                 MAIN CONTENT
-                 ============================================================ -->
+            <!-- ════════════════════════════════════════════════
+                 MAIN
+                 ════════════════════════════════════════════════ -->
             <div class="col-lg-8 podcast-main">
 
-                <!-- --------------------------------------------------------
-                     HERO
-                     -------------------------------------------------------- -->
-                <section class="podcast-hero wow fadeInUp" data-wow-delay="0.05s">
-                    <p class="eyebrow-green">Podcast by Riccardo Murciano &nbsp;·&nbsp; 2024 — Present</p>
+                <!-- ────────────────────────────────────────────
+                     ① PROOF SECTION  (above the fold)
+                     ──────────────────────────────────────────── -->
+                <section class="proof-section wow fadeInUp" data-wow-delay="0.05s">
 
-                    <h1 class="brand-title">CHIT<br><span class="accent">CHATS</span></h1>
+                    <!-- Brand mark — deliberately small -->
+                    <p class="brand-mark">Chit Chats &nbsp;·&nbsp; Podcast by Riccardo Murciano</p>
 
-                    <!-- Waveform visual -->
-                    <svg class="hero-wave" viewBox="0 0 800 40" preserveAspectRatio="none" aria-hidden="true">
-                        <polyline
-                            points="0,20 30,6 60,34 90,10 120,30 150,4 180,36 210,12 240,28 270,5 300,22 330,38 360,14 390,30 420,7 450,32 480,16 510,34 540,9 570,26 600,3 630,28 660,14 690,36 720,8 750,24 780,18 800,20"
-                            stroke="rgba(0,184,123,0.35)"
-                            stroke-width="1.5"
-                            fill="none"
-                            stroke-linecap="round"
-                            stroke-linejoin="round"
-                        />
-                    </svg>
+                    <!-- Headline — medium, precise -->
+                    <h1 class="proof-headline">
+                        Conversations with founders,<br>
+                        scientists, diplomats, and thinkers<br>
+                        <span class="muted">on what matters.</span>
+                    </h1>
 
-                    <p class="hero-tagline">
-                        For the intellectually restless. Conversations at the crossroads of science, culture, philosophy, and what comes next.
-                    </p>
+                    <!-- Logo wall -->
+                    <p class="logos-label">Guests from organizations including</p>
 
-                    <p class="hero-description">
-                        Every episode, one rule: go wherever the conversation leads. Chit Chats brings together thinkers, founders, scientists, artists, and decision-makers for candid exchanges on the ideas that shape how we live, work, and understand the world. No scripts. No safe answers. Just substance.
-                    </p>
+                    <div class="proof-logos">
+                        <!-- Real SVG logos (monochrome white via CSS filter) -->
+                        <img src="assets/logos/mckinsey.svg"  class="logo-img" alt="McKinsey & Company" loading="lazy">
+                        <img src="assets/logos/tesla.svg"     class="logo-img" alt="Tesla"              loading="lazy">
+                        <img src="assets/logos/tiffany.svg"   class="logo-img" alt="Tiffany & Co."      loading="lazy">
+                        <img src="assets/logos/leonardo.svg"  class="logo-img" alt="Leonardo S.p.A."    loading="lazy">
+                        <img src="assets/logos/avanade.svg"   class="logo-img" alt="Avanade"            loading="lazy">
+                        <img src="assets/logos/frog.svg"      class="logo-img" alt="Frog Design"        loading="lazy">
 
-                    <a class="spotify-cta" href="https://open.spotify.com/episode/60gFBHRgWOvBZdkJqBqJO3?si=42ebebcfb6ef4675" target="_blank" rel="noreferrer">
-                        <!-- Spotify SVG icon -->
-                        <svg width="18" height="18" viewBox="0 0 24 24" fill="#1ED760" aria-hidden="true">
+                        <!-- Text marks for startups/orgs without public SVG assets -->
+                        <span class="logo-text-mark">BlueAlpha</span>
+                        <span class="logo-text-mark">LEV&nbsp;Foundation</span>
+                        <span class="logo-text-mark">London&nbsp;Futurists</span>
+                        <span class="logo-text-mark">HighRadius</span>
+                    </div>
+
+                    <!-- Compact stats bar -->
+                    <div class="stats-bar">
+                        <div class="stat-item">
+                            <span class="stat-n" data-toggle="counter-up">11</span>
+                            <span class="stat-l">Episodes</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-n" data-toggle="counter-up">12</span>
+                            <span class="stat-l">Voices</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-n" data-toggle="counter-up">10</span>
+                            <span class="stat-l">Disciplines</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-n" data-toggle="counter-up">8</span>
+                            <span class="stat-l">Countries</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-n" data-toggle="counter-up">15</span>
+                            <span class="stat-l">Organizations</span>
+                        </div>
+                    </div>
+
+                    <!-- Spotify CTA -->
+                    <a class="spotify-cta"
+                       href="https://open.spotify.com/episode/60gFBHRgWOvBZdkJqBqJO3?si=42ebebcfb6ef4675"
+                       target="_blank" rel="noreferrer">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="#1ED760" aria-hidden="true">
                             <path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.479.659.301 1.02zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141C9.6 9.9 15 10.561 18.72 12.84c.361.181.54.78.241 1.2zm.12-3.36C15.24 8.4 8.82 8.16 5.16 9.301c-.6.179-1.2-.181-1.38-.721-.18-.601.18-1.2.72-1.381 4.26-1.26 11.28-1.02 15.721 1.621.539.3.719 1.02.419 1.56-.299.421-1.02.599-1.559.3z"/>
                         </svg>
                         Listen on Spotify
                     </a>
-                </section>
 
-                <!-- --------------------------------------------------------
-                     METRICS
-                     -------------------------------------------------------- -->
-                <section class="wow fadeInUp" data-wow-delay="0.1s">
-                    <div class="metrics-grid">
-                        <div class="metric-item">
-                            <div class="metric-number" data-toggle="counter-up">11</div>
-                            <div class="metric-label">Episodes<br>Published</div>
-                        </div>
-                        <div class="metric-item">
-                            <div class="metric-number" data-toggle="counter-up">12</div>
-                            <div class="metric-label">Voices<br>Featured</div>
-                        </div>
-                        <div class="metric-item">
-                            <div class="metric-number" data-toggle="counter-up">10</div>
-                            <div class="metric-label">Disciplines<br>Covered</div>
-                        </div>
-                        <div class="metric-item">
-                            <div class="metric-number" data-toggle="counter-up">8</div>
-                            <div class="metric-label">Countries<br>Represented</div>
-                        </div>
-                        <div class="metric-item">
-                            <div class="metric-number" data-toggle="counter-up">15</div>
-                            <div class="metric-label">Organizations<br>Featured</div>
-                        </div>
-                    </div>
-                </section>
+                </section><!-- /proof-section -->
 
-                <!-- --------------------------------------------------------
-                     CREDIBILITY
-                     -------------------------------------------------------- -->
-                <section class="section-card wow fadeInUp" data-wow-delay="0.1s">
-                    <div class="section-heading">
-                        <h2>Organizations &amp; Institutions</h2>
-                    </div>
 
-                    <p class="eyebrow" style="margin-bottom: 1.25rem;">Companies &amp; institutions represented by guests</p>
-
-                    <div class="logo-wall mb-4">
-                        <span class="logo-chip chip-tiffany">
-                            <span class="chip-dot"></span>Tiffany &amp; Co.
-                        </span>
-                        <span class="logo-chip chip-mckinsey">
-                            <span class="chip-dot"></span>McKinsey &amp; Company
-                        </span>
-                        <span class="logo-chip chip-tesla">
-                            <span class="chip-dot"></span>Tesla
-                        </span>
-                        <span class="logo-chip chip-leonardo">
-                            <span class="chip-dot"></span>Leonardo S.p.A.
-                        </span>
-                        <span class="logo-chip chip-blue-alpha">
-                            <span class="chip-dot"></span>BlueAlpha
-                        </span>
-                        <span class="logo-chip chip-lev">
-                            <span class="chip-dot"></span>LEV Foundation
-                        </span>
-                        <span class="logo-chip chip-futurists">
-                            <span class="chip-dot"></span>London Futurists
-                        </span>
-                        <span class="logo-chip chip-avanade">
-                            <span class="chip-dot"></span>Avanade
-                        </span>
-                        <span class="logo-chip chip-frog">
-                            <span class="chip-dot"></span>Frog Design
-                        </span>
-                        <span class="logo-chip chip-highradius">
-                            <span class="chip-dot"></span>HighRadius
-                        </span>
-                        <span class="logo-chip">
-                            <span class="chip-dot" style="background:#f0c040;"></span>Courageously Curious
-                        </span>
-                        <span class="logo-chip">
-                            <span class="chip-dot" style="background:#888;"></span>Myhejo Method
-                        </span>
-                    </div>
-
-                    <div class="section-divider"></div>
-
-                    <p class="eyebrow" style="margin-bottom: 1.25rem;">Roles &amp; titles featured</p>
-
-                    <div class="roles-grid">
+                <!-- ────────────────────────────────────────────
+                     ② ROLES STRIP  (first below-fold element)
+                     ──────────────────────────────────────────── -->
+                <section class="roles-strip wow fadeInUp" data-wow-delay="0.05s">
+                    <p class="eyebrow">Featured roles &amp; credentials</p>
+                    <div class="roles-flex">
                         <span class="role-pill">CEO &amp; Co-Founder</span>
                         <span class="role-pill">Executive Director</span>
                         <span class="role-pill">Chair</span>
@@ -236,10 +189,10 @@
                     </div>
                 </section>
 
-                <!-- --------------------------------------------------------
-                     TOPICS
-                     -------------------------------------------------------- -->
-                <section class="section-card wow fadeInUp" data-wow-delay="0.1s">
+                <!-- ────────────────────────────────────────────
+                     ③ TOPICS
+                     ──────────────────────────────────────────── -->
+                <section class="section-card wow fadeInUp" data-wow-delay="0.05s">
                     <div class="section-heading">
                         <h2>Themes &amp; Topics</h2>
                     </div>
@@ -267,15 +220,15 @@
                     </div>
                 </section>
 
-                <!-- --------------------------------------------------------
-                     EPISODES — FEATURED (EP 11, 10, 09)
-                     -------------------------------------------------------- -->
-                <section class="wow fadeInUp" data-wow-delay="0.1s">
-                    <div class="section-heading" style="border-bottom: 1px solid rgba(255,255,255,0.08); padding-bottom: 1.25rem; margin-bottom: 2rem;">
+                <!-- ────────────────────────────────────────────
+                     ④ FEATURED EPISODES  (EP 11–09 — full cards)
+                     ──────────────────────────────────────────── -->
+                <section class="wow fadeInUp" data-wow-delay="0.05s">
+                    <div class="section-heading" style="border-bottom:1px solid rgba(255,255,255,0.07); padding-bottom:1.1rem; margin-bottom:1.75rem;">
                         <h2>Latest Episodes</h2>
-                        <a class="section-link" href="https://open.spotify.com/episode/60gFBHRgWOvBZdkJqBqJO3?si=42ebebcfb6ef4675" target="_blank" rel="noreferrer">
-                            All episodes on Spotify
-                        </a>
+                        <a class="section-link"
+                           href="https://open.spotify.com/episode/60gFBHRgWOvBZdkJqBqJO3?si=42ebebcfb6ef4675"
+                           target="_blank" rel="noreferrer">All episodes on Spotify</a>
                     </div>
 
                     <div class="featured-episodes">
@@ -355,10 +308,10 @@
                     </div><!-- /featured-episodes -->
                 </section>
 
-                <!-- --------------------------------------------------------
-                     EPISODES — COMPACT LIST (EP 08 – EP 01)
-                     -------------------------------------------------------- -->
-                <section class="section-card wow fadeInUp" data-wow-delay="0.1s">
+                <!-- ────────────────────────────────────────────
+                     ⑤ COMPACT EPISODE LIST  (EP 08–01)
+                     ──────────────────────────────────────────── -->
+                <section class="section-card wow fadeInUp" data-wow-delay="0.05s">
                     <div class="section-heading">
                         <h2>All Episodes</h2>
                     </div>
@@ -445,7 +398,7 @@
                             <div class="row-ep-number">EP<br>03</div>
                             <div>
                                 <p class="row-guest">Richard van der Meer</p>
-                                <p class="row-title">Becoming a Leader Where Cultures Collide &nbsp;—&nbsp; Global Executive Leader · McKinsey · Frog Design · Avanade</p>
+                                <p class="row-title">Becoming a Leader Where Cultures Collide &nbsp;—&nbsp; Global Executive · McKinsey · Frog Design · Avanade</p>
                                 <div class="row-tags">
                                     <span class="ep-tag">Leadership</span>
                                     <span class="ep-tag">Digital</span>
@@ -460,7 +413,7 @@
                             <div class="row-ep-number">EP<br>02</div>
                             <div>
                                 <p class="row-guest">Bibi Deflander</p>
-                                <p class="row-title">Walking With Elephants, Talking With Nations &nbsp;—&nbsp; Diplomat, Africa Heritage &amp; International Governance</p>
+                                <p class="row-title">Walking With Elephants, Talking With Nations &nbsp;—&nbsp; Diplomat · Africa Heritage &amp; International Governance</p>
                                 <div class="row-tags">
                                     <span class="ep-tag">Diplomacy</span>
                                     <span class="ep-tag">Africa</span>
@@ -470,11 +423,11 @@
                             <a class="row-listen" href="https://open.spotify.com/episode/60gFBHRgWOvBZdkJqBqJO3?si=42ebebcfb6ef4675" target="_blank" rel="noreferrer">Listen →</a>
                         </div>
 
-                        <!-- EP 01 — Riccardo (Solo) -->
+                        <!-- EP 01 — Solo -->
                         <div class="episode-row">
                             <div class="row-ep-number">EP<br>01</div>
                             <div>
-                                <p class="row-guest">Riccardo Murciano &nbsp;<span style="font-size:0.7rem; color: rgba(255,255,255,0.3); font-weight:400;">Solo</span></p>
+                                <p class="row-guest">Riccardo Murciano &nbsp;<span style="font-size:0.65rem;color:rgba(255,255,255,0.25);font-weight:400;">Solo</span></p>
                                 <p class="row-title">Mastering Order to Cash (O2C) &nbsp;—&nbsp; A deep-dive into enterprise finance operations</p>
                                 <div class="row-tags">
                                     <span class="ep-tag">Business Ops</span>
@@ -488,22 +441,24 @@
                     </div><!-- /episodes-compact -->
                 </section>
 
-                <!-- --------------------------------------------------------
+                <!-- ────────────────────────────────────────────
                      FOOTER
-                     -------------------------------------------------------- -->
-                <section class="wow fadeIn" data-wow-delay="0.1s">
-                    <div class="bg-secondary text-light text-center p-5" style="border-radius: 24px;">
+                     ──────────────────────────────────────────── -->
+                <section class="wow fadeIn" data-wow-delay="0.05s">
+                    <div class="bg-secondary text-light text-center p-5" style="border-radius:24px;">
                         <p class="eyebrow-green mb-3">Chit Chats · A Podcast by Riccardo Murciano</p>
-                        <p style="color: rgba(255,255,255,0.45); font-size: 0.85rem; margin-bottom: 1.5rem; max-width: 38ch; margin-left: auto; margin-right: auto;">
+                        <p style="color:rgba(255,255,255,0.4);font-size:0.82rem;margin-bottom:1.5rem;max-width:38ch;margin-left:auto;margin-right:auto;">
                             New conversations drop regularly. Subscribe on Spotify so you never miss one.
                         </p>
-                        <a class="spotify-cta" style="margin-bottom: 2rem; display: inline-flex;" href="https://open.spotify.com/episode/60gFBHRgWOvBZdkJqBqJO3?si=42ebebcfb6ef4675" target="_blank" rel="noreferrer">
+                        <a class="spotify-cta" style="display:inline-flex;margin-bottom:2rem;"
+                           href="https://open.spotify.com/episode/60gFBHRgWOvBZdkJqBqJO3?si=42ebebcfb6ef4675"
+                           target="_blank" rel="noreferrer">
                             <svg width="16" height="16" viewBox="0 0 24 24" fill="#1ED760" aria-hidden="true">
                                 <path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.479.659.301 1.02zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141C9.6 9.9 15 10.561 18.72 12.84c.361.181.54.78.241 1.2zm.12-3.36C15.24 8.4 8.82 8.16 5.16 9.301c-.6.179-1.2-.181-1.38-.721-.18-.601.18-1.2.72-1.381 4.26-1.26 11.28-1.02 15.721 1.621.539.3.719 1.02.419 1.56-.299.421-1.02.599-1.559.3z"/>
                             </svg>
                             Listen on Spotify
                         </a>
-                        <div class="d-flex justify-content-center mb-4">
+                        <div class="d-flex justify-content-center mb-3">
                             <a class="btn btn-dark btn-square mx-1" href="https://x.com/riccardocloud" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
                             <a class="btn btn-dark btn-square mx-1" href="https://www.linkedin.com/in/riccardocloud/" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
                             <a class="btn btn-dark btn-square mx-1" href="https://instagram.com/riccardocloud" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
@@ -515,7 +470,7 @@
         </div><!-- /row -->
     </div><!-- /container -->
 
-    <!-- Back to Top -->
+    <!-- Back to top -->
     <a href="#" class="back-to-top" aria-label="Back to top"><i class="fa fa-angle-double-up"></i></a>
 
     <!-- Calendly floating button -->
@@ -526,7 +481,7 @@
         <i class="fa fa-calendar"></i>
     </a>
 
-    <!-- JavaScript Libraries -->
+    <!-- JS Libraries -->
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
     <script src="/lib/wow/wow.min.js"></script>
@@ -535,7 +490,7 @@
     <script src="/lib/waypoints/waypoints.min.js"></script>
     <script src="/lib/counterup/counterup.min.js"></script>
 
-    <!-- Site JS (spinner, WOW, Typed, CounterUp, back-to-top) -->
+    <!-- Site JS -->
     <script src="/js/main.js"></script>
 </body>
 </html>

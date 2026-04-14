@@ -1,9 +1,9 @@
 /* ============================================================
-   CHIT CHATS — Podcast Landing Page
-   Inherits: Bootstrap 4, Heebo font, /css/style.css globals
+   CHIT CHATS — Podcast Landing Page  v2
+   Design: logo-led proof → stats → content hierarchy
    ============================================================ */
 
-/* ---- Base ------------------------------------------------- */
+/* ── Base ──────────────────────────────────────────────────── */
 body.podcast-page {
   background-color: #020202;
   color: #f5f5f5;
@@ -16,7 +16,7 @@ body.podcast-page .documents .btn {
 }
 
 .podcast-shell {
-  padding-top: 3rem;
+  padding-top: 2.75rem;
   padding-bottom: 3rem;
 }
 
@@ -24,256 +24,278 @@ body.podcast-page .documents .btn {
   padding-bottom: 5rem;
 }
 
-/* ---- Eyebrow ---------------------------------------------- */
+/* ── Shared typography utils ────────────────────────────────── */
 .eyebrow {
   text-transform: uppercase;
-  letter-spacing: 0.2em;
-  font-size: 0.72rem;
-  color: rgba(255, 255, 255, 0.45);
+  letter-spacing: 0.22em;
+  font-size: 0.68rem;
+  color: rgba(255, 255, 255, 0.35);
   margin-bottom: 0.75rem;
+  font-weight: 500;
 }
 
 .eyebrow-green {
   text-transform: uppercase;
-  letter-spacing: 0.2em;
-  font-size: 0.72rem;
+  letter-spacing: 0.22em;
+  font-size: 0.68rem;
   color: var(--primary);
   margin-bottom: 0.75rem;
-  font-weight: 600;
+  font-weight: 700;
 }
 
-/* ---- Section card (glass) --------------------------------- */
+/* ── Glass section card ─────────────────────────────────────── */
 .section-card {
-  background: radial-gradient(circle at top, rgba(255, 255, 255, 0.04), rgba(0, 0, 0, 0.4));
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  border-radius: 32px;
-  padding: 2.75rem;
-  margin: 2.5rem 0;
-  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.55);
+  background: radial-gradient(circle at top left, rgba(255,255,255,0.04), rgba(0,0,0,0.4));
+  border: 1px solid rgba(255,255,255,0.07);
+  border-radius: 28px;
+  padding: 2.5rem;
+  margin: 2.25rem 0;
+  box-shadow: 0 24px 64px rgba(0,0,0,0.5);
 }
 
 .section-heading {
   display: flex;
   align-items: center;
-  gap: 1.5rem;
+  gap: 1.25rem;
   flex-wrap: wrap;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-  padding-bottom: 1.5rem;
-  margin-bottom: 2rem;
+  border-bottom: 1px solid rgba(255,255,255,0.07);
+  padding-bottom: 1.25rem;
+  margin-bottom: 1.75rem;
 }
 
 .section-heading h2 {
   margin: 0;
-  font-size: 1.5rem;
+  font-size: 1.1rem;
   font-weight: 600;
+  letter-spacing: 0.01em;
+  color: rgba(255,255,255,0.75);
 }
 
 .section-link {
   margin-left: auto;
   text-transform: uppercase;
-  letter-spacing: 0.2em;
-  font-size: 0.75rem;
-  color: #fefefe;
+  letter-spacing: 0.18em;
+  font-size: 0.7rem;
+  color: rgba(255,255,255,0.5);
   text-decoration: none;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.25);
-  padding-bottom: 0.35rem;
+  border-bottom: 1px solid rgba(255,255,255,0.2);
+  padding-bottom: 2px;
   transition: color 0.2s, border-color 0.2s;
 }
 
 .section-link:hover {
   color: var(--primary);
-  border-color: var(--primary);
+  border-color: rgba(0,184,123,0.6);
 }
 
-/* ---- Hero ------------------------------------------------- */
-.podcast-hero {
-  padding: 3.5rem 0 3rem;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.07);
-  position: relative;
-  overflow: hidden;
+.section-divider {
+  height: 1px;
+  background: rgba(255,255,255,0.05);
+  margin: 1.75rem 0;
 }
 
-.podcast-hero::before {
-  content: '';
-  position: absolute;
-  top: -120px;
-  right: -80px;
-  width: 420px;
-  height: 420px;
-  background: radial-gradient(circle, rgba(0, 184, 123, 0.06) 0%, transparent 70%);
-  pointer-events: none;
+/* ════════════════════════════════════════════════════════════
+   PROOF SECTION — the whole first screen
+   ════════════════════════════════════════════════════════════ */
+.proof-section {
+  padding: 0 0 2.75rem;
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+  margin-bottom: 2.5rem;
 }
 
-.hero-wave {
-  display: block;
-  width: 100%;
-  height: 40px;
-  margin: 1.5rem 0 2rem;
-  opacity: 0.5;
-}
-
-.brand-title {
-  font-size: clamp(3.2rem, 9vw, 7rem);
+/* Brand mark — small, secondary */
+.brand-mark {
+  font-size: 0.65rem;
   font-weight: 700;
-  letter-spacing: -0.03em;
-  line-height: 0.9;
-  margin-bottom: 0.6rem;
-  color: #ffffff;
-}
-
-.brand-title .accent {
+  text-transform: uppercase;
+  letter-spacing: 0.28em;
   color: var(--primary);
+  margin-bottom: 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
 }
 
-.hero-tagline {
-  font-size: clamp(1rem, 2vw, 1.2rem);
-  font-weight: 300;
-  color: rgba(255, 255, 255, 0.55);
-  max-width: 50ch;
-  line-height: 1.55;
-  margin-bottom: 1.75rem;
+.brand-mark::before {
+  content: '';
+  display: inline-block;
+  width: 18px;
+  height: 1.5px;
+  background: var(--primary);
+  flex-shrink: 0;
 }
 
-.hero-description {
-  font-size: 0.95rem;
-  line-height: 1.7;
-  color: rgba(255, 255, 255, 0.65);
-  max-width: 60ch;
+/* Proof headline — the real h1, but not giant */
+.proof-headline {
+  font-size: clamp(1.55rem, 3.2vw, 2.25rem);
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+  color: #fff;
+  margin-bottom: 2.5rem;
+  max-width: 38ch;
+}
+
+.proof-headline .muted {
+  color: rgba(255,255,255,0.38);
+  font-weight: 400;
+}
+
+/* ── Logo wall ──────────────────────────────────────────────── */
+.logos-label {
+  font-size: 0.62rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  color: rgba(255,255,255,0.22);
+  margin-bottom: 1.1rem;
+}
+
+.proof-logos {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.75rem 2.25rem;
+  margin-bottom: 2.5rem;
+  padding-bottom: 2.5rem;
+  border-bottom: 1px solid rgba(255,255,255,0.05);
+}
+
+/* SVG logo images — all rendered white on dark */
+.proof-logos .logo-img {
+  display: block;
+  height: 22px;
+  width: auto;
+  max-width: 140px;
+  object-fit: contain;
+  filter: brightness(0) invert(1);
+  opacity: 0.45;
+  transition: opacity 0.25s ease;
+  flex-shrink: 0;
+}
+
+.proof-logos .logo-img:hover {
+  opacity: 0.9;
+}
+
+/* Text-mark fallback for logos without SVG files */
+.logo-text-mark {
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: rgba(255,255,255,0.35);
+  white-space: nowrap;
+  transition: color 0.2s ease;
+  cursor: default;
+}
+
+.logo-text-mark:hover {
+  color: rgba(255,255,255,0.75);
+}
+
+/* ── Inline stats bar ───────────────────────────────────────── */
+.stats-bar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: stretch;
+  background: rgba(255,255,255,0.025);
+  border: 1px solid rgba(255,255,255,0.06);
+  border-radius: 14px;
+  overflow: hidden;
   margin-bottom: 2rem;
 }
 
+.stat-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem 1.35rem;
+  flex: 1 1 0;
+  min-width: 80px;
+  gap: 0.25rem;
+  border-right: 1px solid rgba(255,255,255,0.05);
+  transition: background 0.2s ease;
+}
+
+.stat-item:last-child {
+  border-right: none;
+}
+
+.stat-item:hover {
+  background: rgba(255,255,255,0.03);
+}
+
+.stat-n {
+  font-size: 1.65rem;
+  font-weight: 700;
+  color: var(--primary);
+  line-height: 1;
+  letter-spacing: -0.03em;
+  font-variant-numeric: tabular-nums;
+}
+
+.stat-l {
+  font-size: 0.58rem;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  color: rgba(255,255,255,0.3);
+  font-weight: 600;
+  line-height: 1.3;
+  text-align: center;
+}
+
+/* ── Spotify CTA ────────────────────────────────────────────── */
 .spotify-cta {
   display: inline-flex;
   align-items: center;
-  gap: 0.65rem;
-  background: rgba(30, 215, 96, 0.1);
-  border: 1px solid rgba(30, 215, 96, 0.25);
+  gap: 0.6rem;
+  background: rgba(30, 215, 96, 0.08);
+  border: 1px solid rgba(30, 215, 96, 0.22);
   border-radius: 100px;
-  padding: 0.65rem 1.4rem;
+  padding: 0.6rem 1.35rem;
   color: #1ED760;
-  font-weight: 600;
-  font-size: 0.88rem;
-  letter-spacing: 0.03em;
+  font-weight: 700;
+  font-size: 0.82rem;
+  letter-spacing: 0.04em;
   text-decoration: none;
-  transition: background 0.25s ease, border-color 0.25s ease;
+  transition: background 0.22s ease, border-color 0.22s ease;
 }
 
 .spotify-cta:hover {
-  background: rgba(30, 215, 96, 0.18);
+  background: rgba(30, 215, 96, 0.16);
   border-color: rgba(30, 215, 96, 0.5);
   color: #1ED760;
   text-decoration: none;
 }
 
-.spotify-cta svg {
-  flex-shrink: 0;
+/* ════════════════════════════════════════════════════════════
+   ROLES STRIP — lightweight, no card
+   ════════════════════════════════════════════════════════════ */
+.roles-strip {
+  margin-bottom: 2.25rem;
 }
 
-/* ---- Metrics strip ---------------------------------------- */
-.metrics-grid {
-  display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  gap: 1px;
-  background: rgba(255, 255, 255, 0.07);
-  border: 1px solid rgba(255, 255, 255, 0.07);
-  border-radius: 24px;
-  overflow: hidden;
-}
-
-.metric-item {
-  background: #020202;
-  padding: 2rem 1rem;
-  text-align: center;
-}
-
-.metric-number {
-  font-size: 2.6rem;
-  font-weight: 700;
-  color: var(--primary);
-  line-height: 1;
-  font-variant-numeric: tabular-nums;
-  letter-spacing: -0.03em;
-}
-
-.metric-label {
-  margin-top: 0.45rem;
-  font-size: 0.7rem;
-  text-transform: uppercase;
-  letter-spacing: 0.15em;
-  color: rgba(255, 255, 255, 0.4);
-  line-height: 1.3;
-}
-
-/* ---- Credibility — logo wall ------------------------------ */
-.logo-wall {
+.roles-flex {
   display: flex;
   flex-wrap: wrap;
-  gap: 0.75rem;
-  align-items: center;
-}
-
-.logo-chip {
-  display: inline-flex;
-  align-items: center;
   gap: 0.5rem;
-  padding: 0.55rem 1.1rem;
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  border-radius: 10px;
-  font-size: 0.78rem;
-  font-weight: 600;
-  letter-spacing: 0.04em;
-  color: rgba(255, 255, 255, 0.6);
-  white-space: nowrap;
-  background: rgba(255, 255, 255, 0.03);
-  transition: all 0.2s ease;
-  text-decoration: none;
-}
-
-.logo-chip:hover {
-  border-color: rgba(0, 184, 123, 0.35);
-  color: rgba(255, 255, 255, 0.9);
-  background: rgba(0, 184, 123, 0.05);
-  text-decoration: none;
-}
-
-.logo-chip .chip-dot {
-  width: 7px;
-  height: 7px;
-  border-radius: 50%;
-  flex-shrink: 0;
-}
-
-/* Org-specific dot colors */
-.chip-tiffany .chip-dot  { background: #0abac2; }
-.chip-mckinsey .chip-dot { background: #2b5dab; }
-.chip-tesla .chip-dot    { background: #cc2222; }
-.chip-leonardo .chip-dot { background: #003087; }
-.chip-blue-alpha .chip-dot { background: #00B87B; }
-.chip-lev .chip-dot      { background: #9b59b6; }
-.chip-avanade .chip-dot  { background: #e06d00; }
-.chip-frog .chip-dot     { background: #00a99c; }
-.chip-highradius .chip-dot { background: #3a6dc2; }
-.chip-futurists .chip-dot { background: #6c63ff; }
-.chip-insify .chip-dot   { background: #00B87B; }
-
-/* ---- Roles strip ------------------------------------------ */
-.roles-grid {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.6rem;
 }
 
 .role-pill {
   display: inline-flex;
   align-items: center;
   gap: 0.4rem;
-  padding: 0.4rem 0.9rem;
-  background: rgba(255, 255, 255, 0.04);
-  border: 1px solid rgba(255, 255, 255, 0.09);
+  padding: 0.35rem 0.85rem;
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(255,255,255,0.08);
   border-radius: 100px;
-  font-size: 0.77rem;
-  color: rgba(255, 255, 255, 0.55);
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: rgba(255,255,255,0.5);
   letter-spacing: 0.02em;
+  transition: all 0.2s ease;
 }
 
 .role-pill::before {
@@ -282,67 +304,86 @@ body.podcast-page .documents .btn {
   height: 4px;
   border-radius: 50%;
   background: var(--primary);
-  opacity: 0.7;
+  opacity: 0.6;
+  flex-shrink: 0;
 }
 
-/* ---- Topics ---------------------------------------------- */
+.role-pill:hover {
+  background: rgba(0,184,123,0.06);
+  border-color: rgba(0,184,123,0.2);
+  color: rgba(255,255,255,0.75);
+}
+
+/* ════════════════════════════════════════════════════════════
+   TOPICS CLOUD
+   ════════════════════════════════════════════════════════════ */
 .topics-cloud {
   display: flex;
   flex-wrap: wrap;
-  gap: 0.65rem;
+  gap: 0.55rem;
 }
 
 .topic-pill {
-  padding: 0.45rem 1rem;
-  border: 1px solid rgba(255, 255, 255, 0.09);
+  padding: 0.38rem 0.9rem;
+  border: 1px solid rgba(255,255,255,0.08);
   border-radius: 100px;
-  font-size: 0.8rem;
+  font-size: 0.78rem;
   font-weight: 500;
-  color: rgba(255, 255, 255, 0.55);
+  color: rgba(255,255,255,0.48);
   transition: all 0.2s ease;
   cursor: default;
 }
 
 .topic-pill:hover {
-  background: rgba(255, 255, 255, 0.05);
-  border-color: rgba(255, 255, 255, 0.2);
-  color: rgba(255, 255, 255, 0.85);
+  background: rgba(255,255,255,0.04);
+  border-color: rgba(255,255,255,0.18);
+  color: rgba(255,255,255,0.8);
 }
 
 .topic-pill.featured {
-  border-color: rgba(0, 184, 123, 0.3);
+  border-color: rgba(0,184,123,0.28);
   color: var(--primary);
-  background: rgba(0, 184, 123, 0.07);
+  background: rgba(0,184,123,0.06);
 }
 
-/* ---- Episodes — tags -------------------------------------- */
+.topic-pill.featured:hover {
+  background: rgba(0,184,123,0.12);
+  border-color: rgba(0,184,123,0.5);
+}
+
+/* ════════════════════════════════════════════════════════════
+   EPISODE TAGS
+   ════════════════════════════════════════════════════════════ */
 .ep-tag {
   display: inline-block;
-  padding: 0.2rem 0.6rem;
-  background: rgba(0, 184, 123, 0.08);
-  border: 1px solid rgba(0, 184, 123, 0.2);
+  padding: 0.18rem 0.55rem;
+  background: rgba(0,184,123,0.08);
+  border: 1px solid rgba(0,184,123,0.18);
   border-radius: 100px;
-  font-size: 0.68rem;
+  font-size: 0.62rem;
   font-weight: 700;
   letter-spacing: 0.1em;
   color: var(--primary);
   text-transform: uppercase;
-  margin-right: 0.35rem;
-  margin-bottom: 0.35rem;
+  margin-right: 0.3rem;
+  margin-bottom: 0.3rem;
 }
 
-/* ---- Episodes — featured cards ---------------------------- */
+/* ════════════════════════════════════════════════════════════
+   FEATURED EPISODE CARDS (EP 11–09)
+   ════════════════════════════════════════════════════════════ */
 .featured-episodes {
   display: flex;
   flex-direction: column;
-  gap: 1.75rem;
+  gap: 1.5rem;
+  margin-bottom: 0;
 }
 
 .episode-card-featured {
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  border-radius: 28px;
-  padding: 2.25rem;
-  background: linear-gradient(135deg, rgba(255, 255, 255, 0.03) 0%, rgba(0, 0, 0, 0.35) 100%);
+  border: 1px solid rgba(255,255,255,0.07);
+  border-radius: 24px;
+  padding: 2rem 2.25rem;
+  background: linear-gradient(135deg, rgba(255,255,255,0.025) 0%, rgba(0,0,0,0.3) 100%);
   transition: border-color 0.25s ease, transform 0.25s ease, box-shadow 0.25s ease;
   position: relative;
   overflow: hidden;
@@ -351,18 +392,18 @@ body.podcast-page .documents .btn {
 .episode-card-featured::after {
   content: '';
   position: absolute;
-  top: 0;
-  right: 0;
-  width: 200px;
-  height: 200px;
-  background: radial-gradient(circle, rgba(0, 184, 123, 0.04) 0%, transparent 70%);
+  top: -40px;
+  right: -40px;
+  width: 180px;
+  height: 180px;
+  background: radial-gradient(circle, rgba(0,184,123,0.04) 0%, transparent 70%);
   pointer-events: none;
 }
 
 .episode-card-featured:hover {
-  border-color: rgba(0, 184, 123, 0.2);
-  transform: translateY(-3px);
-  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.5);
+  border-color: rgba(0,184,123,0.2);
+  transform: translateY(-2px);
+  box-shadow: 0 20px 50px rgba(0,0,0,0.45);
 }
 
 .ep-header {
@@ -370,90 +411,89 @@ body.podcast-page .documents .btn {
   align-items: flex-start;
   justify-content: space-between;
   gap: 1rem;
-  margin-bottom: 1.25rem;
+  margin-bottom: 1.1rem;
 }
 
 .ep-meta-left {
   display: flex;
   flex-direction: column;
-  gap: 0.6rem;
+  gap: 0.5rem;
 }
 
 .ep-number {
-  font-size: 0.65rem;
+  font-size: 0.6rem;
   font-family: 'SF Mono', 'Fira Code', 'Courier New', monospace;
-  letter-spacing: 0.18em;
-  color: rgba(255, 255, 255, 0.22);
+  letter-spacing: 0.2em;
+  color: rgba(255,255,255,0.2);
   text-transform: uppercase;
 }
 
 .ep-tags {
   display: flex;
   flex-wrap: wrap;
-  gap: 0.3rem;
 }
 
 .company-badge {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  padding: 0.4rem 0.85rem;
-  background: rgba(255, 255, 255, 0.05);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  border-radius: 8px;
-  font-size: 0.72rem;
+  padding: 0.35rem 0.8rem;
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.09);
+  border-radius: 7px;
+  font-size: 0.68rem;
   font-weight: 700;
-  letter-spacing: 0.06em;
-  color: rgba(255, 255, 255, 0.5);
+  letter-spacing: 0.07em;
+  color: rgba(255,255,255,0.42);
   white-space: nowrap;
   align-self: flex-start;
   flex-shrink: 0;
 }
 
 .ep-guest-name {
-  font-size: 1.3rem;
+  font-size: 1.2rem;
   font-weight: 700;
-  margin-bottom: 0.2rem;
+  margin-bottom: 0.15rem;
   color: #fff;
   line-height: 1.2;
 }
 
 .ep-guest-role {
-  font-size: 0.82rem;
-  color: rgba(255, 255, 255, 0.42);
-  margin-bottom: 1.1rem;
+  font-size: 0.78rem;
+  color: rgba(255,255,255,0.38);
+  margin-bottom: 1rem;
   font-weight: 400;
 }
 
 .ep-title {
-  font-size: 1rem;
+  font-size: 0.95rem;
   font-weight: 600;
-  color: rgba(255, 255, 255, 0.85);
-  margin-bottom: 0.85rem;
-  line-height: 1.4;
+  color: rgba(255,255,255,0.82);
+  margin-bottom: 0.75rem;
+  line-height: 1.45;
 }
 
 .ep-summary {
-  font-size: 0.88rem;
-  line-height: 1.7;
-  color: rgba(255, 255, 255, 0.52);
-  margin-bottom: 1.5rem;
-  max-width: 68ch;
+  font-size: 0.86rem;
+  line-height: 1.72;
+  color: rgba(255,255,255,0.48);
+  margin-bottom: 1.35rem;
+  max-width: 66ch;
 }
 
 .listen-btn {
   display: inline-flex;
   align-items: center;
-  gap: 0.45rem;
-  font-size: 0.75rem;
+  gap: 0.4rem;
+  font-size: 0.7rem;
   font-weight: 700;
-  letter-spacing: 0.12em;
+  letter-spacing: 0.14em;
   text-transform: uppercase;
   color: var(--primary);
   text-decoration: none;
-  border-bottom: 1px solid rgba(0, 184, 123, 0.25);
+  border-bottom: 1px solid rgba(0,184,123,0.22);
   padding-bottom: 2px;
-  transition: border-color 0.2s ease, color 0.2s ease;
+  transition: border-color 0.2s ease;
 }
 
 .listen-btn:hover {
@@ -462,66 +502,68 @@ body.podcast-page .documents .btn {
   text-decoration: none;
 }
 
-/* ---- Episodes — compact list ------------------------------ */
+/* ════════════════════════════════════════════════════════════
+   COMPACT EPISODE LIST (EP 08–01)
+   ════════════════════════════════════════════════════════════ */
 .episodes-compact {
   display: flex;
   flex-direction: column;
-  gap: 0;
 }
 
 .episode-row {
   display: grid;
-  grid-template-columns: 56px 1fr auto;
-  gap: 1.25rem;
+  grid-template-columns: 52px 1fr auto;
+  gap: 1.1rem;
   align-items: center;
-  padding: 1.35rem 1rem;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-  transition: background 0.2s ease;
+  padding: 1.25rem 0.75rem;
+  border-bottom: 1px solid rgba(255,255,255,0.04);
+  transition: background 0.18s ease;
+  border-radius: 10px;
 }
 
-.episode-row:first-child {
-  border-top: 1px solid rgba(255, 255, 255, 0.05);
+.episode-row:last-child {
+  border-bottom: none;
 }
 
 .episode-row:hover {
-  background: rgba(255, 255, 255, 0.02);
+  background: rgba(255,255,255,0.018);
 }
 
 .row-ep-number {
-  font-size: 0.65rem;
+  font-size: 0.6rem;
   font-family: 'SF Mono', 'Fira Code', 'Courier New', monospace;
   letter-spacing: 0.15em;
-  color: rgba(255, 255, 255, 0.2);
+  color: rgba(255,255,255,0.18);
   text-align: center;
   text-transform: uppercase;
+  line-height: 1.4;
 }
 
 .row-guest {
-  font-size: 0.95rem;
+  font-size: 0.92rem;
   font-weight: 700;
-  color: rgba(255, 255, 255, 0.88);
-  margin-bottom: 0.15rem;
+  color: rgba(255,255,255,0.85);
+  margin-bottom: 0.12rem;
 }
 
 .row-title {
-  font-size: 0.82rem;
-  color: rgba(255, 255, 255, 0.42);
-  margin-bottom: 0.4rem;
-  line-height: 1.4;
+  font-size: 0.78rem;
+  color: rgba(255,255,255,0.36);
+  margin-bottom: 0.35rem;
+  line-height: 1.45;
 }
 
 .row-tags {
   display: flex;
   flex-wrap: wrap;
-  gap: 0.3rem;
 }
 
 .row-listen {
-  font-size: 0.7rem;
+  font-size: 0.65rem;
   font-weight: 700;
-  letter-spacing: 0.1em;
+  letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: rgba(0, 184, 123, 0.6);
+  color: rgba(0,184,123,0.5);
   text-decoration: none;
   white-space: nowrap;
   transition: color 0.2s;
@@ -533,51 +575,66 @@ body.podcast-page .documents .btn {
   text-decoration: none;
 }
 
-/* ---- Divider ---------------------------------------------- */
-.section-divider {
-  height: 1px;
-  background: rgba(255, 255, 255, 0.06);
-  margin: 2.5rem 0;
-}
-
-/* ---- Sidebar overrides ------------------------------------ */
+/* ════════════════════════════════════════════════════════════
+   SIDEBAR OVERRIDES
+   ════════════════════════════════════════════════════════════ */
 body.podcast-page .shadow {
-  background: #0d0d0d;
-  border-right: 1px solid rgba(255, 255, 255, 0.06);
+  background: #0c0c0c;
+  border-right: 1px solid rgba(255,255,255,0.05);
 }
 
-/* ---- Responsive ------------------------------------------- */
+/* ════════════════════════════════════════════════════════════
+   RESPONSIVE
+   ════════════════════════════════════════════════════════════ */
 @media (max-width: 991.98px) {
   .sticky-lg-top.vh-100 {
     height: 100% !important;
   }
-
-  .metrics-grid {
-    grid-template-columns: repeat(3, 1fr);
+  .stats-bar {
+    flex-wrap: wrap;
+  }
+  .stat-item {
+    flex: 1 1 80px;
   }
 }
 
 @media (max-width: 767px) {
   .section-card {
-    padding: 2rem 1.5rem;
-    border-radius: 24px;
+    padding: 1.75rem 1.5rem;
+    border-radius: 20px;
   }
 
-  .metrics-grid {
-    grid-template-columns: repeat(2, 1fr);
-    border-radius: 18px;
+  .section-heading {
+    flex-direction: column;
+    align-items: flex-start;
   }
 
-  .metric-number {
-    font-size: 2rem;
+  .section-link {
+    margin-left: 0;
   }
 
-  .brand-title {
-    font-size: 3.2rem;
+  .proof-headline {
+    font-size: 1.55rem;
+  }
+
+  .proof-logos {
+    gap: 0.6rem 1.75rem;
+  }
+
+  .proof-logos .logo-img {
+    height: 18px;
+  }
+
+  .stat-item {
+    padding: 0.85rem 0.75rem;
+  }
+
+  .stat-n {
+    font-size: 1.35rem;
   }
 
   .episode-card-featured {
-    padding: 1.75rem;
+    padding: 1.5rem;
   }
 
   .ep-header {
@@ -590,14 +647,5 @@ body.podcast-page .shadow {
 
   .row-listen {
     display: none;
-  }
-
-  .section-heading {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-
-  .section-link {
-    margin-left: 0;
   }
 }
