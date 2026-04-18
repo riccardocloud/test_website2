@@ -1,0 +1,398 @@
+/* =====================================================================
+   Chit-Chats Podcast — landing page styles
+   Single stylesheet. Mobile-first. No framework.
+   ===================================================================== */
+
+/* ---------- Tokens ---------- */
+:root {
+  --paper:      #F5F1EA;
+  --paper-alt:  #EDE6D8;
+  --ink:        #141414;
+  --ink-soft:   #2A2A2A;
+  --rule:       rgba(20,20,20,0.14);
+
+  --blue-deep:  #18578F;
+  --blue-sky:   #3AB3FF;
+  --blue-royal: #1E78B8;
+  --green:      #0E6E33;
+  --orange-hi:  #F26A21;
+  --orange-sun: #F58A2B;
+  --red:        #E1321F;
+  --violet:     #8B6FE8;
+
+  --display: "Oswald", "Anton", "Bebas Neue", Impact, sans-serif;
+  --body:    "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --mono:    "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+
+  --shadow-deep: 0 20px 60px rgba(20,20,20,0.18);
+}
+
+/* ---------- Reset ---------- */
+*, *::before, *::after { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; }
+body {
+  background: var(--paper-alt);
+  color: var(--ink);
+  font-family: var(--body);
+  font-size: 16px;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+img { max-width: 100%; display: block; }
+a { color: inherit; text-decoration: none; }
+button { font: inherit; cursor: pointer; border: 0; background: none; color: inherit; }
+
+/* ---------- Reusable atoms ---------- */
+.display { font-family: var(--display); text-transform: uppercase; letter-spacing: -0.02em; font-weight: 700; line-height: 0.95; }
+.kicker  { font-family: var(--mono); font-size: 12px; letter-spacing: 1.4px; text-transform: uppercase; color: var(--ink-soft); }
+.rule    { height: 2px; background: currentColor; width: 100px; margin: 14px 0; }
+.rule.center { margin-inline: auto; }
+
+.btn {
+  display: inline-block; padding: 12px 18px;
+  font-family: var(--display); font-weight: 600;
+  text-transform: uppercase; letter-spacing: 0.4px; font-size: 13px;
+  transition: transform 120ms ease, background 120ms ease;
+}
+.btn:hover { transform: translateY(-1px); }
+.btn-primary { background: var(--ink); color: var(--paper); }
+.btn-primary:hover { background: #000; }
+.btn-ghost   { border: 1px solid var(--ink); color: var(--ink); }
+.btn-ghost:hover { background: var(--ink); color: var(--paper); }
+
+/* Ribbon — SVG sits inline in markup as <svg class="ribbon">. Token for size. */
+.ribbon { display: block; }
+
+/* Wordmark stacked caps */
+.wordmark {
+  font-family: var(--display); font-weight: 700;
+  font-size: 44px; line-height: 0.88; letter-spacing: -0.02em;
+  text-transform: uppercase;
+}
+
+/* Guest avatar — monogram placeholder that swaps for <img> if loaded */
+.avatar {
+  width: 100%; aspect-ratio: 1 / 1; position: relative; overflow: hidden;
+  background: var(--avatar-bg, #2a2a2a); color: var(--avatar-fg, #f5f1ea);
+  display: flex; align-items: center; justify-content: center;
+  font-family: var(--display); font-weight: 600; font-size: 34%; /* scales with container */
+  letter-spacing: -0.02em;
+}
+.avatar::before {
+  content: ""; position: absolute; inset: 0;
+  background: radial-gradient(circle at 50% 30%, rgba(255,255,255,0.08), transparent 70%),
+              radial-gradient(ellipse at 50% 120%, rgba(0,0,0,0.35), transparent 60%);
+  pointer-events: none;
+}
+.avatar img {
+  position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover;
+}
+
+/* ---------- Layout shell ---------- */
+.wrap  { width: 100%; max-width: 1280px; margin: 0 auto; padding-inline: 24px; }
+.pad-y { padding-block: 72px; }
+
+/* =====================================================================
+   NAV
+   ===================================================================== */
+.nav {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 20px 24px; border-bottom: 1px solid var(--rule);
+  background: var(--paper-alt);
+  position: sticky; top: 0; z-index: 30;
+  backdrop-filter: saturate(1.4) blur(6px);
+}
+.nav__brand { display: flex; align-items: center; gap: 12px; }
+.nav__brand .ribbon { width: 22px; height: auto; }
+.nav__brand span { font-family: var(--display); font-weight: 700; font-size: 20px; text-transform: uppercase; letter-spacing: -0.01em; }
+.nav__links { display: flex; gap: 28px; font-size: 14px; }
+.nav__links a { opacity: 0.85; }
+.nav__links a:hover { opacity: 1; }
+.nav__cta { padding: 8px 14px; }
+
+@media (max-width: 720px) {
+  .nav__links { display: none; }
+  .nav { padding: 14px 18px; }
+}
+
+/* =====================================================================
+   HERO — Symmetric 4 + center + 4 Landi composition
+   ===================================================================== */
+.hero {
+  background: var(--paper-alt);
+  padding: 32px 24px 64px;
+  border-bottom: 1px solid var(--rule);
+}
+.hero__kicker {
+  text-align: center;
+  font-family: var(--mono); font-size: 12px; letter-spacing: 1.4px;
+  text-transform: uppercase; color: var(--ink-soft); margin-bottom: 28px;
+}
+.hero__grid {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  gap: 40px;
+  align-items: center;
+  max-width: 1280px; margin: 0 auto;
+}
+.hero__center { text-align: center; position: relative; min-width: 320px; }
+.hero__lockup { position: relative; display: inline-block; }
+.hero__lockup .wordmark { font-size: clamp(64px, 10vw, 120px); }
+.hero__lockup .ribbon {
+  position: absolute;
+  top: clamp(-22px, -2vw, -14px);
+  right: clamp(-80px, -8vw, -60px);
+  width: clamp(56px, 7vw, 92px);
+  height: auto;
+}
+.hero__tagline {
+  font-family: var(--display); font-weight: 500;
+  font-size: clamp(18px, 2vw, 22px);
+  text-transform: uppercase; letter-spacing: -0.005em; line-height: 1.1;
+  max-width: 380px; margin: 0 auto;
+}
+.hero__ctas { display: flex; justify-content: center; gap: 10px; margin-top: 28px; flex-wrap: wrap; }
+
+/* Tablet — collapse to single column, reuse the two sides below */
+@media (max-width: 960px) {
+  .hero__grid { grid-template-columns: 1fr; }
+}
+
+/* =====================================================================
+   MINIMAL guest list (used in hero sides)
+   ===================================================================== */
+.guest-list { display: grid; gap: 0; }
+.guest-row {
+  display: grid; grid-template-columns: 48px 1fr auto;
+  gap: 16px; align-items: center;
+  padding: 14px 0;
+  border-top: 1px solid var(--rule);
+}
+.guest-row:last-child { border-bottom: 1px solid var(--rule); }
+.guest-row__swatch {
+  width: 24px; height: 24px; position: relative;
+  background: var(--swatch-bg, var(--blue-royal));
+}
+.guest-row__swatch::after {
+  content: ""; position: absolute; inset: 0;
+  background: var(--swatch-ribbon, var(--orange-hi));
+  clip-path: polygon(25% 0, 75% 0, 75% 70%, 50% 55%, 25% 70%);
+}
+.guest-row__name {
+  font-family: var(--display); font-weight: 700; font-size: 16px;
+  text-transform: uppercase; letter-spacing: -0.01em;
+}
+.guest-row__role { font-size: 12px; color: var(--ink-soft); }
+.guest-row__ep { font-family: var(--mono); font-size: 11px; color: var(--ink-soft); }
+
+/* =====================================================================
+   GUEST BAND — transparent PNG, sits above the central lockup
+   ===================================================================== */
+.hero__band {
+  display: block;
+  width: min(1100px, 92%);
+  height: auto;
+  margin: 20px auto 8px;
+  /* blend the residual edge pixels into the cream background */
+  mix-blend-mode: multiply;
+  filter: contrast(1.02);
+}
+@media (max-width: 720px) {
+  .hero__band { margin: 12px auto 4px; width: 100%; }
+}
+
+/* =====================================================================
+   FEATURED EPISODE STRIP — full-bleed split
+   ===================================================================== */
+.featured {
+  display: grid; grid-template-columns: 1.2fr 1fr;
+  background: var(--feat-bg, var(--ink));
+  color: var(--feat-ink, var(--paper));
+  position: relative;
+}
+.featured__copy { padding: clamp(40px, 5vw, 72px); position: relative; }
+.featured__kicker {
+  font-family: var(--mono); font-size: 12px; letter-spacing: 1.4px;
+  text-transform: uppercase; opacity: 0.85;
+}
+.featured__title {
+  font-family: var(--display); font-weight: 700;
+  font-size: clamp(36px, 5.5vw, 72px);
+  text-transform: uppercase; letter-spacing: -0.025em; line-height: 0.92;
+  margin-top: 24px;
+}
+.featured__rule { width: 120px; height: 3px; background: currentColor; margin: 20px 0; }
+.featured__guest { font-family: var(--display); font-weight: 600; font-size: 24px; text-transform: uppercase; }
+.featured__role  { font-size: 14px; opacity: 0.9; margin-top: 4px; }
+.featured__cta {
+  margin-top: 32px; display: inline-block;
+  padding: 14px 22px; background: var(--feat-ink, var(--paper)); color: var(--feat-bg, var(--ink));
+  font-family: var(--display); font-weight: 700;
+  text-transform: uppercase; letter-spacing: 0.5px; font-size: 14px;
+  transition: transform 120ms ease;
+}
+.featured__cta:hover { transform: translateX(3px); }
+
+.featured__cover-wrap {
+  padding: clamp(24px, 4vw, 48px);
+  display: flex; align-items: center; justify-content: center;
+  background: var(--feat-bg, var(--ink));
+}
+.cover {
+  position: relative;
+  aspect-ratio: 1 / 1;
+  width: min(420px, 100%);
+  background: var(--cover-bg, var(--ink));
+  color: var(--cover-ink, var(--paper));
+  font-family: var(--display);
+  box-shadow: var(--shadow-deep);
+  overflow: hidden;
+}
+.cover__ribbon { position: absolute; top: 0; right: 14%; width: 19%; height: auto; }
+.cover__wordmark {
+  position: absolute; top: 5.5%; left: 5.5%;
+  font-weight: 700; font-size: 9.5cqi; line-height: 0.88;
+  text-transform: uppercase; letter-spacing: -0.02em;
+}
+.cover__title-block {
+  position: absolute; left: 5.5%; right: 14%; top: 38%;
+}
+.cover__title {
+  font-weight: 700; font-size: 8.5cqi; line-height: 0.96;
+  text-transform: uppercase; letter-spacing: -0.015em;
+}
+.cover__rule { height: 2px; background: currentColor; width: 38%; margin: 14px 0; }
+.cover__sub {
+  position: absolute; left: 5.5%; right: 14%; bottom: 6.6%;
+  font-weight: 500; font-size: 4.2cqi; line-height: 1.18;
+  text-transform: uppercase; letter-spacing: -0.005em;
+}
+.cover__sub b { font-weight: 700; }
+.cover__byline {
+  position: absolute; right: 3%; top: 5.5%;
+  writing-mode: vertical-rl; transform: rotate(180deg);
+  font-family: var(--body); font-size: 2.8cqi; opacity: 0.92;
+}
+.cover { container-type: inline-size; }
+
+@media (max-width: 820px) {
+  .featured { grid-template-columns: 1fr; }
+  .featured__cover-wrap { order: -1; padding-top: 40px; }
+}
+
+/* =====================================================================
+   BY THE NUMBERS — stack metrics
+   ===================================================================== */
+.numbers {
+  padding: clamp(56px, 7vw, 96px) 24px;
+  background: var(--paper-alt);
+  display: grid; grid-template-columns: 1fr 1fr; gap: 64px;
+  max-width: 1280px; margin: 0 auto;
+}
+.numbers__intro h2 {
+  font-family: var(--display); font-weight: 700;
+  font-size: clamp(32px, 4.5vw, 56px);
+  text-transform: uppercase; letter-spacing: -0.025em; line-height: 0.92;
+  margin: 14px 0 0 0;
+}
+.numbers__intro p { margin-top: 24px; font-size: 15px; color: var(--ink-soft); line-height: 1.6; max-width: 460px; }
+
+.metric-stack { display: grid; }
+.metric-row {
+  display: grid; grid-template-columns: 140px 1fr auto;
+  padding: 18px 0; align-items: baseline;
+  border-bottom: 1px solid var(--rule);
+}
+.metric-row:first-child { border-top: 1px solid var(--rule); }
+.metric-row__n {
+  font-family: var(--display); font-weight: 700; font-size: 56px;
+  line-height: 0.9; letter-spacing: -0.03em;
+}
+.metric-row__label { font-size: 14px; color: var(--ink-soft); text-transform: uppercase; letter-spacing: 0.8px; }
+.metric-row__idx   { font-family: var(--mono); font-size: 11px; color: var(--ink-soft); }
+
+@media (max-width: 820px) {
+  .numbers { grid-template-columns: 1fr; gap: 32px; }
+  .metric-row { grid-template-columns: 100px 1fr auto; }
+  .metric-row__n { font-size: 40px; }
+}
+
+/* =====================================================================
+   ALL EPISODES GRID
+   ===================================================================== */
+.episodes {
+  padding: clamp(56px, 7vw, 96px) 24px;
+  background: var(--paper);
+  border-top: 1px solid var(--rule);
+}
+.episodes h2 {
+  font-family: var(--display); font-weight: 700;
+  font-size: clamp(32px, 5vw, 64px);
+  text-transform: uppercase; letter-spacing: -0.025em; line-height: 0.92;
+  margin: 14px 0 40px;
+  max-width: 1280px; margin-inline: auto;
+}
+.episodes__grid {
+  display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px;
+  max-width: 1280px; margin: 0 auto;
+}
+@media (max-width: 960px) { .episodes__grid { grid-template-columns: repeat(3, 1fr); } }
+@media (max-width: 720px) { .episodes__grid { grid-template-columns: repeat(2, 1fr); gap: 12px; } }
+
+.ep-card {
+  display: block;
+  position: relative; overflow: hidden;
+  transition: transform 200ms ease;
+  container-type: inline-size;
+}
+.ep-card:hover { transform: translateY(-4px); }
+.ep-card .cover { width: 100%; box-shadow: none; }
+
+/* =====================================================================
+   LOGOS STRIP — companies guests have worked at
+   ===================================================================== */
+.logos {
+  padding: clamp(48px, 5vw, 64px) 24px;
+  background: var(--ink); color: var(--paper);
+}
+.logos__wrap { max-width: 1280px; margin: 0 auto; }
+.logos__kicker {
+  font-family: var(--mono); font-size: 12px; letter-spacing: 1.4px;
+  text-transform: uppercase; opacity: 0.6; margin-bottom: 20px;
+}
+.logos__row {
+  display: flex; flex-wrap: wrap; align-items: center;
+  gap: 8px 28px; row-gap: 12px;
+}
+.logos__item {
+  font-family: var(--display); font-weight: 600; font-size: 22px;
+  text-transform: uppercase; letter-spacing: 0.01em;
+}
+.logos__sep {
+  width: 6px; height: 6px; background: var(--paper);
+  transform: rotate(45deg); opacity: 0.35;
+}
+
+/* =====================================================================
+   FOOTER
+   ===================================================================== */
+.footer {
+  padding: 40px 24px 48px;
+  background: var(--paper);
+  border-top: 1px solid var(--rule);
+  display: flex; justify-content: space-between; align-items: flex-end; gap: 24px;
+  flex-wrap: wrap;
+}
+.footer .wordmark { font-size: 56px; }
+.footer__meta {
+  font-family: var(--mono); font-size: 12px; color: var(--ink-soft); text-align: right;
+  line-height: 1.6;
+}
+
+/* =====================================================================
+   PRINT & PREFS
+   ===================================================================== */
+@media (prefers-reduced-motion: reduce) {
+  * { animation: none !important; transition: none !important; }
+}

@@ -1,0 +1,215 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>Chit-Chats — LinkedIn Banner (1584×396)</title>
+<meta name="viewport" content="width=1584" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --paper: #F5F1EA; --paper-alt: #EDE6D8; --ink: #141414; --ink-soft: #2A2A2A;
+    --rule: rgba(20,20,20,0.18); --orange: #F26A21; --blue-deep: #18578F;
+    --display: "Oswald", Impact, sans-serif;
+    --body: "Inter", -apple-system, sans-serif;
+    --mono: "JetBrains Mono", ui-monospace, monospace;
+  }
+  html, body { margin: 0; padding: 0; background: #1a1a1a; font-family: var(--body); }
+  *, *::before, *::after { box-sizing: border-box; }
+
+  /* Stage — fixed LinkedIn banner dimensions, scaled to viewport */
+  .stage {
+    width: 1584px; height: 396px;
+    position: relative;
+    margin: 40px auto;
+    background: var(--paper-alt);
+    overflow: hidden;
+    box-shadow: 0 30px 80px rgba(0,0,0,0.5);
+  }
+
+  /* Full-bleed portrait band — the Cenacle-style row */
+  .band {
+    position: absolute;
+    left: 0; right: 0; bottom: 0;
+    width: 100%; height: auto;
+    mix-blend-mode: multiply;
+    filter: contrast(1.02);
+    pointer-events: none;
+  }
+
+  /* Soft cream vignette at top so wordmark + tagline pop over the portraits */
+  .stage::before {
+    content: "";
+    position: absolute; inset: 0;
+    background: linear-gradient(180deg,
+      rgba(237,230,216,0.95) 0%,
+      rgba(237,230,216,0.75) 30%,
+      rgba(237,230,216,0.20) 55%,
+      rgba(237,230,216,0) 75%);
+    pointer-events: none; z-index: 1;
+  }
+
+  /* Left column — wordmark + tagline */
+  .left {
+    position: absolute; top: 44px; left: 56px; z-index: 3;
+    color: var(--ink);
+  }
+  .kicker {
+    font-family: var(--mono); font-size: 14px; letter-spacing: 1.8px;
+    text-transform: uppercase; color: var(--ink-soft); margin-bottom: 14px;
+  }
+  .wordmark {
+    font-family: var(--display); font-weight: 700;
+    font-size: 132px; line-height: 0.86; letter-spacing: -0.025em;
+    text-transform: uppercase; color: var(--ink);
+  }
+  .rule {
+    width: 110px; height: 3px; background: var(--ink);
+    margin: 18px 0 16px;
+  }
+  .tagline {
+    font-family: var(--display); font-weight: 500;
+    font-size: 22px; line-height: 1.15;
+    text-transform: uppercase; letter-spacing: -0.005em;
+    color: var(--ink); max-width: 480px;
+  }
+
+  /* Right column — badges stacked on top, byline below */
+  .right {
+    position: absolute; top: 44px; right: 56px; z-index: 3;
+    display: flex; flex-direction: column; align-items: flex-end; gap: 14px;
+    color: var(--ink);
+  }
+  .right__kicker {
+    font-family: var(--mono); font-size: 12px; letter-spacing: 1.6px;
+    text-transform: uppercase; color: var(--ink-soft);
+  }
+  .badge {
+    display: flex; align-items: center; gap: 12px;
+    padding: 10px 18px; background: var(--ink); color: #fff;
+    border-radius: 10px; text-decoration: none;
+    font-family: var(--body); font-weight: 500;
+    min-width: 230px;
+  }
+  .badge svg { flex-shrink: 0; }
+  .badge__lead { font-size: 11px; opacity: 0.9; line-height: 1; }
+  .badge__name { font-size: 22px; font-weight: 700; letter-spacing: -0.01em; line-height: 1.1; }
+  .badge__text { display: flex; flex-direction: column; gap: 2px; }
+
+  .right__host {
+    margin-top: 6px;
+    font-family: var(--mono); font-size: 12px; color: var(--ink-soft);
+    letter-spacing: 0.3px;
+  }
+
+  /* The subtle byline, rotated — editorial touch from the covers */
+  .byline {
+    position: absolute; left: 18px; top: 44px; z-index: 3;
+    writing-mode: vertical-rl; transform: rotate(180deg);
+    font-family: var(--body); font-size: 12px; color: var(--ink-soft); letter-spacing: 0.3px;
+  }
+
+  /* Footer meta — tiny URL baseline */
+  .meta {
+    position: absolute; left: 56px; bottom: 20px; z-index: 3;
+    font-family: var(--mono); font-size: 12px; letter-spacing: 1.4px;
+    text-transform: uppercase; color: var(--ink-soft);
+  }
+
+  /* Export helper — printable page: exact banner, no chrome */
+  @media print {
+    body { background: #fff; }
+    .stage { margin: 0; box-shadow: none; }
+    .toolbar, .note { display: none !important; }
+    @page { size: 1584px 396px; margin: 0; }
+  }
+
+  /* Designer-view chrome (hidden in export) */
+  .toolbar {
+    position: fixed; top: 12px; left: 12px; z-index: 100;
+    display: flex; gap: 8px; font-family: var(--mono); font-size: 11px;
+    color: #ddd;
+  }
+  .toolbar b { color: #fff; font-weight: 600; }
+  .note {
+    max-width: 1584px; margin: 0 auto 60px; padding: 16px 24px;
+    color: #ccc; font-family: var(--body); font-size: 13px; line-height: 1.6;
+    background: #222; border-left: 3px solid var(--orange);
+  }
+  .note b { color: #fff; }
+  .note code { background: #000; padding: 2px 6px; color: var(--orange); }
+</style>
+</head>
+<body>
+
+<div class="toolbar"><b>Chit-Chats</b> — LinkedIn banner · 1584 × 396 px</div>
+
+<div class="stage" id="banner">
+
+  <!-- Vertical byline at far left -->
+  <div class="byline">— Riccardo Murciano · Host</div>
+
+  <!-- Left: wordmark + tagline -->
+  <div class="left">
+    <div class="kicker">A podcast by Riccardo Murciano · Season 01</div>
+    <div class="wordmark">Chit-<br/>Chats</div>
+    <div class="rule"></div>
+    <div class="tagline">Conversations with founders, scientists &amp; thinkers on what matters.</div>
+  </div>
+
+  <!-- Right: platform badges -->
+  <div class="right">
+    <div class="right__kicker">Listen now →</div>
+
+    <a class="badge" href="#">
+      <!-- Spotify mark -->
+      <svg width="34" height="34" viewBox="0 0 168 168" aria-hidden="true">
+        <circle cx="84" cy="84" r="84" fill="#1ED760"/>
+        <path fill="#000" d="M122 119c-2 3-5 4-8 2-21-13-48-16-79-9-3 1-6-1-7-4s1-6 4-7c34-8 64-4 88 10 3 2 4 5 2 8zm10-22c-2 4-7 5-10 3-24-15-61-19-90-10-4 1-8-1-9-5s1-8 5-9c33-10 74-5 102 12 3 2 5 6 2 9zm1-22c-29-17-76-19-103-11-4 1-9-1-10-6s1-9 6-10c31-9 83-8 116 12 4 2 5 8 3 12s-8 5-12 3z"/>
+      </svg>
+      <div class="badge__text">
+        <span class="badge__lead">Listen on</span>
+        <span class="badge__name">Spotify</span>
+      </div>
+    </a>
+
+    <a class="badge" href="#">
+      <!-- Apple Podcasts mark -->
+      <svg width="34" height="34" viewBox="0 0 168 168" aria-hidden="true">
+        <rect width="168" height="168" rx="38" fill="url(#apGrad)"/>
+        <defs>
+          <linearGradient id="apGrad" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0" stop-color="#F452FF"/>
+            <stop offset="1" stop-color="#832BC1"/>
+          </linearGradient>
+        </defs>
+        <!-- mic -->
+        <rect x="70" y="50" width="28" height="52" rx="14" fill="#fff"/>
+        <path d="M56 86 a28 28 0 0 0 56 0" stroke="#fff" stroke-width="8" fill="none" stroke-linecap="round"/>
+        <line x1="84" y1="112" x2="84" y2="128" stroke="#fff" stroke-width="8" stroke-linecap="round"/>
+        <!-- base pulse -->
+        <path d="M60 138 a38 38 0 0 1 48 0" stroke="#fff" stroke-width="6" fill="none" stroke-linecap="round" opacity="0.9"/>
+      </svg>
+      <div class="badge__text">
+        <span class="badge__lead">Listen on</span>
+        <span class="badge__name">Apple Podcasts</span>
+      </div>
+    </a>
+  </div>
+
+  <!-- Full-bleed portrait band (Cenacle-style) -->
+  <img class="band" src="assets/guests-band.png" alt="" />
+
+  <!-- Bottom-left URL -->
+  <div class="meta">riccardocloud.com/podcast</div>
+
+</div>
+
+<div class="note">
+  <p><b>Export to PNG/JPG for LinkedIn:</b> open this file in Chrome → <code>Cmd/Ctrl + P</code> → <b>Save as PDF</b> with <i>Paper size: Custom 1584 × 396 px</i>, <i>margins: none</i>, <i>background graphics: on</i>. Or right-click the banner → <b>Capture node screenshot</b> in DevTools (Elements → right-click <code>#banner</code>).</p>
+  <p>LinkedIn personal cover photo: <b>1584 × 396 px</b>. LinkedIn Page cover: 1128 × 191 px (this file auto-scales if you capture at that size).</p>
+</div>
+
+</body>
+</html>

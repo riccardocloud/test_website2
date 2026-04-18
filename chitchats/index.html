@@ -1,0 +1,304 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Chit-Chats — A podcast by Riccardo Murciano</title>
+<meta name="description" content="Long-form conversations with founders, scientists, diplomats and thinkers. Hosted by Riccardo Murciano." />
+<meta property="og:title" content="Chit-Chats — Conversations on what matters." />
+<meta property="og:description" content="Long-form interviews with founders, scientists, diplomats and thinkers." />
+<meta property="og:type" content="website" />
+<meta name="theme-color" content="#141414" />
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+<!-- ========== NAV ========== -->
+<header class="nav">
+  <a href="#" class="nav__brand" aria-label="Chit-Chats home">
+    <svg class="ribbon" viewBox="0 0 100 140" width="22" height="30" aria-hidden="true">
+      <polygon points="10,8 90,8 90,128 50,96 10,128" fill="#18578F" />
+      <polygon points="4,0 82,0 82,112 43,80 4,112" fill="#F26A21" />
+    </svg>
+    <span>Chit-Chats</span>
+  </a>
+  <nav class="nav__links">
+    <a href="#episodes">Episodes</a>
+    <a href="#guests">Guests</a>
+    <a href="#numbers">About</a>
+  </nav>
+  <a class="btn btn-primary nav__cta" href="https://open.spotify.com" target="_blank" rel="noopener">Listen on Spotify →</a>
+</header>
+
+<!-- ========== HERO — 4 + wordmark + 4 ========== -->
+<section class="hero">
+  <div class="hero__kicker">Season 01 · 11 episodes · New every other Tuesday</div>
+
+  <!-- Portrait band — sits directly above the central CHIT-CHATS title, full-bleed, transparent -->
+  <img class="hero__band" src="assets/guests-band.png" alt="The eleven Chit-Chats guests" />
+  <div class="hero__grid">
+
+    <!-- Left 4 guests -->
+    <div class="guest-list">
+      <article class="guest-row" style="--swatch-bg:#3AB3FF; --swatch-ribbon:#E1321F;">
+        <div class="guest-row__swatch"></div>
+        <div><div class="guest-row__name">Riccardo Murciano</div><div class="guest-row__role">Host — Chit Chats</div></div>
+        <div class="guest-row__ep">EP 01</div>
+      </article>
+      <article class="guest-row" style="--swatch-bg:#C98A3E; --swatch-ribbon:#0E6E33;">
+        <div class="guest-row__swatch"></div>
+        <div><div class="guest-row__name">Bibi Deflander</div><div class="guest-row__role">Diplomat</div></div>
+        <div class="guest-row__ep">EP 02</div>
+      </article>
+      <article class="guest-row" style="--swatch-bg:#1E78B8; --swatch-ribbon:#F26A21;">
+        <div class="guest-row__swatch"></div>
+        <div><div class="guest-row__name">Richard van der Meer</div><div class="guest-row__role">Global Executive · McKinsey · Frog · Avanade</div></div>
+        <div class="guest-row__ep">EP 03</div>
+      </article>
+      <article class="guest-row" style="--swatch-bg:#0E6E33; --swatch-ribbon:#F26A21;">
+        <div class="guest-row__swatch"></div>
+        <div><div class="guest-row__name">Cristiano De Nobili, PhD</div><div class="guest-row__role">Theoretical Physicist &amp; AI Scientist</div></div>
+        <div class="guest-row__ep">EP 04</div>
+      </article>
+    </div>
+
+    <!-- Center lockup -->
+    <div class="hero__center">
+      <div class="hero__lockup">
+        <div class="wordmark">Chit-<br/>Chats</div>
+      </div>
+      <div class="rule center" style="background:#141414; width:80px; height:3px; margin:24px auto;"></div>
+      <p class="hero__tagline">Conversations with founders, scientists &amp; thinkers on what matters.</p>
+      <div class="hero__ctas">
+        <a class="btn btn-primary" href="https://open.spotify.com" target="_blank" rel="noopener">Listen on Spotify</a>
+        <a class="btn btn-ghost" href="#episodes">All Episodes</a>
+      </div>
+    </div>
+
+    <!-- Right 4 guests -->
+    <div class="guest-list">
+      <article class="guest-row" style="--swatch-bg:#6B4AA8; --swatch-ribbon:#F58A2B;">
+        <div class="guest-row__swatch"></div>
+        <div><div class="guest-row__name">Marina Geymonat &amp; Chiara Aprilis</div><div class="guest-row__role">AI Transformation Leader · Philosopher-Engineer</div></div>
+        <div class="guest-row__ep">EP 05</div>
+      </article>
+      <article class="guest-row" style="--swatch-bg:#1D1D1D; --swatch-ribbon:#3AB3FF;">
+        <div class="guest-row__swatch"></div>
+        <div><div class="guest-row__name">Florian Fürst</div><div class="guest-row__role">AI Consultant, Engineer &amp; Founder</div></div>
+        <div class="guest-row__ep">EP 06</div>
+      </article>
+      <article class="guest-row" style="--swatch-bg:#1F3B4D; --swatch-ribbon:#D4A864;">
+        <div class="guest-row__swatch"></div>
+        <div><div class="guest-row__name">Calvin Kwok</div><div class="guest-row__role">High Jewelry Ambassador · Tiffany &amp; Co.</div></div>
+        <div class="guest-row__ep">EP 07</div>
+      </article>
+      <article class="guest-row" style="--swatch-bg:#0B3D2E; --swatch-ribbon:#F58A2B;">
+        <div class="guest-row__swatch"></div>
+        <div><div class="guest-row__name">David Wood</div><div class="guest-row__role">Chair, London Futurists · Exec Dir, LEV Foundation</div></div>
+        <div class="guest-row__ep">EP 08</div>
+      </article>
+    </div>
+
+  </div>
+</section>
+
+<!-- ========== FEATURED EPISODE ========== -->
+<section class="featured" style="--feat-bg:#141414; --feat-ink:#F5F1EA;" id="featured">
+  <div class="featured__copy">
+    <div class="featured__kicker">Latest — EP 11 · AI · MARKETING · MEASUREMENT</div>
+    <h1 class="featured__title">AI-Native Marketing, MMM, and the Agentic Future</h1>
+    <div class="featured__rule"></div>
+    <div class="featured__guest">Peter Grafe</div>
+    <div class="featured__role">CEO &amp; Co-Founder, BlueAlpha · Former Tesla</div>
+    <a class="featured__cta" href="https://open.spotify.com" target="_blank" rel="noopener">Listen now →</a>
+  </div>
+  <div class="featured__cover-wrap">
+    <!-- Episode cover — reusable block, drop-in any episode -->
+    <div class="cover" style="--cover-bg:#141414; --cover-ink:#F5F1EA;">
+      <svg class="cover__ribbon" viewBox="0 0 100 140" aria-hidden="true">
+        <polygon points="10,8 90,8 90,128 50,96 10,128" fill="#000" />
+        <polygon points="4,0 82,0 82,112 43,80 4,112" fill="#3AB3FF" />
+      </svg>
+      <div class="cover__wordmark">Chit-<br/>Chats</div>
+      <div class="cover__title-block">
+        <div class="cover__title">AI-Native Marketing, MMM, and the Agentic Future</div>
+        <div class="cover__rule"></div>
+      </div>
+      <div class="cover__sub">A conversation with <b>Peter Grafe</b><br/>on <b>AI, Marketing, Measurement</b></div>
+      <div class="cover__byline">— Riccardo Murciano</div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== BY THE NUMBERS ========== -->
+<section class="numbers" id="numbers">
+  <div class="numbers__intro">
+    <div class="kicker">By the numbers</div>
+    <h2>Eleven episodes, fifteen orgs, eight countries.</h2>
+    <p>A roster of guests that spans theoretical physics, AI-native marketing, luxury commerce, longevity science, diplomacy and the philosophy of fear. Every episode earns its place — no two overlap.</p>
+  </div>
+  <div class="metric-stack">
+    <div class="metric-row"><div class="metric-row__n">11</div><div class="metric-row__label">Episodes</div><div class="metric-row__idx">/ 01</div></div>
+    <div class="metric-row"><div class="metric-row__n">12</div><div class="metric-row__label">Voices</div><div class="metric-row__idx">/ 02</div></div>
+    <div class="metric-row"><div class="metric-row__n">10</div><div class="metric-row__label">Disciplines</div><div class="metric-row__idx">/ 03</div></div>
+    <div class="metric-row"><div class="metric-row__n">8</div><div class="metric-row__label">Countries</div><div class="metric-row__idx">/ 04</div></div>
+    <div class="metric-row"><div class="metric-row__n">15</div><div class="metric-row__label">Organizations</div><div class="metric-row__idx">/ 05</div></div>
+  </div>
+</section>
+
+<!-- ========== ALL EPISODES ========== -->
+<section class="episodes" id="episodes">
+  <div class="wrap">
+    <div class="kicker">All episodes</div>
+    <h2>The full conversation list</h2>
+  </div>
+  <div class="episodes__grid">
+
+    <a class="ep-card" href="#" data-slug="o2c">
+      <div class="cover" style="--cover-bg:#3AB3FF; --cover-ink:#141414;">
+        <svg class="cover__ribbon" viewBox="0 0 100 140"><polygon points="10,8 90,8 90,128 50,96 10,128" fill="#18578F"/><polygon points="4,0 82,0 82,112 43,80 4,112" fill="#E1321F"/></svg>
+        <div class="cover__wordmark">Chit-<br/>Chats</div>
+        <div class="cover__title-block"><div class="cover__title">Order-to-Cash</div><div class="cover__rule"></div></div>
+        <div class="cover__sub">A conversation with <b>Riccardo Murciano · Solo</b><br/>on <b>Business Ops, Finance, Process</b></div>
+        <div class="cover__byline">— Riccardo Murciano</div>
+      </div>
+    </a>
+
+    <a class="ep-card" href="#" data-slug="elephants">
+      <div class="cover" style="--cover-bg:#C98A3E; --cover-ink:#FFFFFF;">
+        <svg class="cover__ribbon" viewBox="0 0 100 140"><polygon points="10,8 90,8 90,128 50,96 10,128" fill="#7A4F18"/><polygon points="4,0 82,0 82,112 43,80 4,112" fill="#0E6E33"/></svg>
+        <div class="cover__wordmark">Chit-<br/>Chats</div>
+        <div class="cover__title-block"><div class="cover__title">Walking With Elephants, Talking With Nations</div><div class="cover__rule"></div></div>
+        <div class="cover__sub">A conversation with <b>Bibi Deflander</b><br/>on <b>Diplomacy, Africa, Spirituality</b></div>
+        <div class="cover__byline">— Riccardo Murciano</div>
+      </div>
+    </a>
+
+    <a class="ep-card" href="#" data-slug="cultures">
+      <div class="cover" style="--cover-bg:#1E78B8; --cover-ink:#FFFFFF;">
+        <svg class="cover__ribbon" viewBox="0 0 100 140"><polygon points="10,8 90,8 90,128 50,96 10,128" fill="#18578F"/><polygon points="4,0 82,0 82,112 43,80 4,112" fill="#F26A21"/></svg>
+        <div class="cover__wordmark">Chit-<br/>Chats</div>
+        <div class="cover__title-block"><div class="cover__title">Becoming a Leader Where Cultures Collide</div><div class="cover__rule"></div></div>
+        <div class="cover__sub">A conversation with <b>Richard van der Meer</b><br/>on <b>Leadership, Digital, Culture</b></div>
+        <div class="cover__byline">— Riccardo Murciano</div>
+      </div>
+    </a>
+
+    <a class="ep-card" href="#" data-slug="blackholes">
+      <div class="cover" style="--cover-bg:#0E6E33; --cover-ink:#FFFFFF;">
+        <svg class="cover__ribbon" viewBox="0 0 100 140"><polygon points="10,8 90,8 90,128 50,96 10,128" fill="#0A4E24"/><polygon points="4,0 82,0 82,112 43,80 4,112" fill="#F26A21"/></svg>
+        <div class="cover__wordmark">Chit-<br/>Chats</div>
+        <div class="cover__title-block"><div class="cover__title">From Black Holes to Startups</div><div class="cover__rule"></div></div>
+        <div class="cover__sub">A conversation with <b>Cristiano De Nobili, PhD</b><br/>on <b>Physics, AI, Research</b></div>
+        <div class="cover__byline">— Riccardo Murciano</div>
+      </div>
+    </a>
+
+    <a class="ep-card" href="#" data-slug="dual-life">
+      <div class="cover" style="--cover-bg:#6B4AA8; --cover-ink:#FFFFFF;">
+        <svg class="cover__ribbon" viewBox="0 0 100 140"><polygon points="10,8 90,8 90,128 50,96 10,128" fill="#3E2A66"/><polygon points="4,0 82,0 82,112 43,80 4,112" fill="#F58A2B"/></svg>
+        <div class="cover__wordmark">Chit-<br/>Chats</div>
+        <div class="cover__title-block"><div class="cover__title">Exploring AI's Dual Life in Companies and Communities</div><div class="cover__rule"></div></div>
+        <div class="cover__sub">A conversation with <b>Marina Geymonat &amp; Chiara Aprilis</b><br/>on <b>AI Ethics, Philosophy, Policy</b></div>
+        <div class="cover__byline">— Riccardo Murciano</div>
+      </div>
+    </a>
+
+    <a class="ep-card" href="#" data-slug="automation">
+      <div class="cover" style="--cover-bg:#1D1D1D; --cover-ink:#F5F1EA;">
+        <svg class="cover__ribbon" viewBox="0 0 100 140"><polygon points="10,8 90,8 90,128 50,96 10,128" fill="#000"/><polygon points="4,0 82,0 82,112 43,80 4,112" fill="#3AB3FF"/></svg>
+        <div class="cover__wordmark">Chit-<br/>Chats</div>
+        <div class="cover__title-block"><div class="cover__title">Automation, Custom Apps vs. Excel, and Starting in AI</div><div class="cover__rule"></div></div>
+        <div class="cover__sub">A conversation with <b>Florian Fürst</b><br/>on <b>AI, Automation, Entrepreneurship</b></div>
+        <div class="cover__byline">— Riccardo Murciano</div>
+      </div>
+    </a>
+
+    <a class="ep-card" href="#" data-slug="diamonds">
+      <div class="cover" style="--cover-bg:#1F3B4D; --cover-ink:#FFFFFF;">
+        <svg class="cover__ribbon" viewBox="0 0 100 140"><polygon points="10,8 90,8 90,128 50,96 10,128" fill="#12232E"/><polygon points="4,0 82,0 82,112 43,80 4,112" fill="#D4A864"/></svg>
+        <div class="cover__wordmark">Chit-<br/>Chats</div>
+        <div class="cover__title-block"><div class="cover__title">Diamonds, Culture, Happiness, and Sales</div><div class="cover__rule"></div></div>
+        <div class="cover__sub">A conversation with <b>Calvin Kwok</b><br/>on <b>Luxury, Culture, Identity</b></div>
+        <div class="cover__byline">— Riccardo Murciano</div>
+      </div>
+    </a>
+
+    <a class="ep-card" href="#" data-slug="longevity">
+      <div class="cover" style="--cover-bg:#0B3D2E; --cover-ink:#FFFFFF;">
+        <svg class="cover__ribbon" viewBox="0 0 100 140"><polygon points="10,8 90,8 90,128 50,96 10,128" fill="#062319"/><polygon points="4,0 82,0 82,112 43,80 4,112" fill="#F58A2B"/></svg>
+        <div class="cover__wordmark">Chit-<br/>Chats</div>
+        <div class="cover__title-block"><div class="cover__title">The Reality of Longevity Escape Velocity</div><div class="cover__rule"></div></div>
+        <div class="cover__sub">A conversation with <b>David Wood</b><br/>on <b>Longevity, Science, Futurism</b></div>
+        <div class="cover__byline">— Riccardo Murciano</div>
+      </div>
+    </a>
+
+    <a class="ep-card" href="#" data-slug="fear">
+      <div class="cover" style="--cover-bg:#F26A21; --cover-ink:#FFFFFF;">
+        <svg class="cover__ribbon" viewBox="0 0 100 140"><polygon points="10,8 90,8 90,128 50,96 10,128" fill="#7A4818"/><polygon points="4,0 82,0 82,112 43,80 4,112" fill="#8B6FE8"/></svg>
+        <div class="cover__wordmark">Chit-<br/>Chats</div>
+        <div class="cover__title-block"><div class="cover__title">Direct Your Story. Fear Will Show You the Way.</div><div class="cover__rule"></div></div>
+        <div class="cover__sub">A conversation with <b>Raymond Miranda</b><br/>on <b>Philosophy, Coaching, Resilience</b></div>
+        <div class="cover__byline">— Riccardo Murciano</div>
+      </div>
+    </a>
+
+    <a class="ep-card" href="#" data-slug="curious">
+      <div class="cover" style="--cover-bg:#E8DED0; --cover-ink:#141414;">
+        <svg class="cover__ribbon" viewBox="0 0 100 140"><polygon points="10,8 90,8 90,128 50,96 10,128" fill="#8E3A22"/><polygon points="4,0 82,0 82,112 43,80 4,112" fill="#E1321F"/></svg>
+        <div class="cover__wordmark">Chit-<br/>Chats</div>
+        <div class="cover__title-block"><div class="cover__title">Curiosity, Commitment, and Courageous Choices</div><div class="cover__rule"></div></div>
+        <div class="cover__sub">A conversation with <b>Simon Veithen</b><br/>on <b>Decision Science, Psychology, Film</b></div>
+        <div class="cover__byline">— Riccardo Murciano</div>
+      </div>
+    </a>
+
+    <a class="ep-card" href="#" data-slug="ai-marketing" data-featured="true">
+      <div class="cover" style="--cover-bg:#141414; --cover-ink:#F5F1EA;">
+        <svg class="cover__ribbon" viewBox="0 0 100 140"><polygon points="10,8 90,8 90,128 50,96 10,128" fill="#000"/><polygon points="4,0 82,0 82,112 43,80 4,112" fill="#3AB3FF"/></svg>
+        <div class="cover__wordmark">Chit-<br/>Chats</div>
+        <div class="cover__title-block"><div class="cover__title">AI-Native Marketing, MMM, and the Agentic Future</div><div class="cover__rule"></div></div>
+        <div class="cover__sub">A conversation with <b>Peter Grafe</b><br/>on <b>AI, Marketing, Measurement</b></div>
+        <div class="cover__byline">— Riccardo Murciano</div>
+      </div>
+    </a>
+
+  </div>
+</section>
+
+<!-- ========== LOGOS ========== -->
+<section class="logos" id="guests">
+  <div class="logos__wrap">
+    <div class="logos__kicker">Guests have worked at</div>
+    <div class="logos__row">
+      <span class="logos__item">McKinsey &amp; Company</span><span class="logos__sep"></span>
+      <span class="logos__item">Tesla</span><span class="logos__sep"></span>
+      <span class="logos__item">Tiffany &amp; Co.</span><span class="logos__sep"></span>
+      <span class="logos__item">Leonardo S.p.A.</span><span class="logos__sep"></span>
+      <span class="logos__item">Avanade</span><span class="logos__sep"></span>
+      <span class="logos__item">Frog Design</span><span class="logos__sep"></span>
+      <span class="logos__item">BlueAlpha</span><span class="logos__sep"></span>
+      <span class="logos__item">LEV Foundation</span><span class="logos__sep"></span>
+      <span class="logos__item">London Futurists</span><span class="logos__sep"></span>
+      <span class="logos__item">HighRadius</span>
+    </div>
+  </div>
+</section>
+
+<!-- ========== FOOTER ========== -->
+<footer class="footer">
+  <div class="wordmark">Chit-<br/>Chats</div>
+  <div class="footer__meta">
+    © 2026 Riccardo Murciano<br/>
+    <a href="https://riccardocloud.com/podcast">riccardocloud.com/podcast</a>
+  </div>
+</footer>
+
+</body>
+</html>
