@@ -1,0 +1,420 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Artefacts — by Riccardo Murciano</title>
+<meta name="description" content="A small, growing index of self-contained things I've shipped — single-file visualisations, experiments, and notes by Riccardo Murciano." />
+<meta name="author" content="Riccardo Murciano" />
+<link rel="canonical" href="https://riccardocloud.com/artefacts/" />
+
+<!-- Open Graph -->
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="Artefacts — Riccardo Murciano" />
+<meta property="og:title" content="Artefacts — by Riccardo Murciano" />
+<meta property="og:description" content="A small, growing index of self-contained things I've shipped." />
+<meta property="og:url" content="https://riccardocloud.com/artefacts/" />
+
+<!-- Twitter -->
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:title" content="Artefacts — by Riccardo Murciano" />
+<meta name="twitter:description" content="A small, growing index of self-contained things I've shipped." />
+<meta name="twitter:creator" content="@riccardocloud" />
+
+<meta name="theme-color" content="#0a0a0b" />
+<link rel="icon" href="/img/favicon.ico" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+<style>
+/* ====================================================================
+   ARTEFACTS — index hub
+   Dark editorial. Designed to host an unbounded list of items.
+   ==================================================================== */
+
+:root {
+  --bg:        #0a0a0b;
+  --bg-alt:    #111114;
+  --ink:       #f0ece4;
+  --ink-soft:  rgba(240, 236, 228, 0.55);
+  --ink-mute:  rgba(240, 236, 228, 0.32);
+  --rule:      rgba(240, 236, 228, 0.08);
+  --rule-bold: rgba(240, 236, 228, 0.18);
+  --accent:    #00B87B;
+  --display:   "Oswald", "Anton", Impact, sans-serif;
+  --body:      "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --mono:      "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; }
+body {
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--body);
+  font-size: 16px;
+  line-height: 1.55;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+a { color: inherit; text-decoration: none; }
+
+/* ---- Shell ---- */
+.wrap {
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 56px 32px 96px;
+}
+
+@media (max-width: 720px) {
+  .wrap { padding: 32px 20px 72px; }
+}
+
+/* ---- Crumb / back link ---- */
+.crumb {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+  margin-bottom: 56px;
+  transition: color 160ms ease;
+}
+.crumb::before {
+  content: "←";
+  font-family: var(--body);
+  font-size: 14px;
+  letter-spacing: 0;
+}
+.crumb:hover { color: var(--ink); }
+
+/* ---- Hero ---- */
+.hero {
+  margin-bottom: 56px;
+  padding-bottom: 32px;
+  border-bottom: 1px solid var(--rule);
+}
+.hero__eyebrow {
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 18px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.hero__eyebrow::after {
+  content: "";
+  flex: 1;
+  max-width: 64px;
+  height: 1px;
+  background: var(--accent);
+  opacity: 0.4;
+}
+.hero__h1 {
+  font-family: var(--display);
+  font-weight: 700;
+  font-size: clamp(56px, 12vw, 132px);
+  text-transform: uppercase;
+  letter-spacing: -0.035em;
+  line-height: 0.9;
+  margin: 0 0 24px;
+}
+.hero__lede {
+  font-size: 16.5px;
+  line-height: 1.6;
+  color: var(--ink-soft);
+  max-width: 56ch;
+}
+.hero__lede em {
+  font-style: normal;
+  color: var(--ink);
+}
+.hero__meta {
+  margin-top: 32px;
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--ink-mute);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+}
+.hero__meta strong {
+  color: var(--ink);
+  font-weight: 500;
+}
+
+/* ---- Section heading ---- */
+.section-head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--ink-mute);
+  margin-bottom: 0;
+  padding-bottom: 14px;
+  border-bottom: 1px solid var(--rule-bold);
+}
+
+/* ---- Artefact list ---- */
+.artefact-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.artefact {
+  display: grid;
+  grid-template-columns: 96px 1fr auto;
+  gap: 24px;
+  padding: 32px 0;
+  border-bottom: 1px solid var(--rule);
+  transition: background 180ms ease;
+  position: relative;
+}
+.artefact:hover { background: rgba(255,255,255,0.012); }
+
+.artefact__no {
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.18em;
+  color: var(--ink-mute);
+  text-transform: uppercase;
+  padding-top: 6px;
+}
+.artefact__no .n {
+  display: block;
+  font-family: var(--display);
+  font-weight: 700;
+  font-size: 28px;
+  color: var(--ink);
+  letter-spacing: -0.02em;
+  line-height: 1;
+  margin-bottom: 8px;
+}
+
+.artefact__body {
+  min-width: 0;
+}
+.artefact__title {
+  font-family: var(--display);
+  font-weight: 700;
+  font-size: clamp(22px, 3vw, 32px);
+  text-transform: uppercase;
+  letter-spacing: -0.02em;
+  line-height: 1.05;
+  margin: 0 0 4px;
+}
+.artefact__title a {
+  background-image: linear-gradient(currentColor, currentColor);
+  background-size: 0% 1px;
+  background-repeat: no-repeat;
+  background-position: 0 100%;
+  transition: background-size 240ms ease;
+  padding-bottom: 2px;
+}
+.artefact__title a:hover { background-size: 100% 1px; }
+
+.artefact__sub {
+  font-size: 14.5px;
+  line-height: 1.6;
+  color: var(--ink-soft);
+  max-width: 52ch;
+  margin: 6px 0 14px;
+}
+
+.artefact__tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px 14px;
+  font-family: var(--mono);
+  font-size: 10.5px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--ink-mute);
+}
+.artefact__tags span::after {
+  content: "·";
+  margin-left: 14px;
+  color: var(--ink-mute);
+  opacity: 0.5;
+}
+.artefact__tags span:last-child::after { content: ""; margin: 0; }
+
+.artefact__cta {
+  align-self: flex-start;
+  margin-top: 6px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--mono);
+  font-size: 11.5px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--accent);
+  border: 1px solid rgba(0, 184, 123, 0.3);
+  padding: 10px 16px;
+  border-radius: 100px;
+  white-space: nowrap;
+  transition: background 180ms ease, border-color 180ms ease;
+}
+.artefact__cta:hover {
+  background: rgba(0, 184, 123, 0.08);
+  border-color: rgba(0, 184, 123, 0.6);
+}
+
+@media (max-width: 720px) {
+  .artefact {
+    grid-template-columns: 60px 1fr;
+    gap: 16px;
+    padding: 24px 0;
+  }
+  .artefact__cta {
+    grid-column: 2;
+    align-self: flex-start;
+    margin-top: 4px;
+  }
+  .artefact__no .n { font-size: 22px; }
+}
+
+/* ---- Empty-slot rows (preview of future artefacts) ---- */
+.artefact--pending {
+  opacity: 0.35;
+}
+.artefact--pending .artefact__title {
+  color: var(--ink-mute);
+}
+.artefact--pending .artefact__sub {
+  color: var(--ink-mute);
+}
+.artefact--pending .artefact__cta {
+  border-color: var(--rule-bold);
+  color: var(--ink-mute);
+  pointer-events: none;
+}
+
+/* ---- Footer ---- */
+.foot {
+  margin-top: 64px;
+  padding-top: 32px;
+  border-top: 1px solid var(--rule);
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 16px;
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--ink-mute);
+}
+.foot__links { display: flex; gap: 18px; flex-wrap: wrap; }
+.foot__links a { color: var(--ink-soft); transition: color 160ms ease; }
+.foot__links a:hover { color: var(--ink); }
+
+@media (prefers-reduced-motion: reduce) {
+  * { animation: none !important; transition: none !important; }
+}
+</style>
+</head>
+<body>
+
+<main class="wrap">
+
+  <a class="crumb" href="/">Portfolio</a>
+
+  <!-- ============= HERO ============= -->
+  <section class="hero">
+    <p class="hero__eyebrow">Index № 01</p>
+    <h1 class="hero__h1">Artefacts.</h1>
+    <p class="hero__lede">
+      A small, growing index of <em>self-contained</em> things I've shipped — single-file visualisations, experiments, and notes. Most open with a double-click. None depend on a backend.
+    </p>
+    <div class="hero__meta">
+      <span><strong>01</strong> logged</span>
+      <span><strong>01</strong> live</span>
+      <span>maintained by Riccardo Murciano</span>
+    </div>
+  </section>
+
+  <!-- ============= LIST ============= -->
+  <header class="section-head">
+    <span>The Catalogue</span>
+    <span>2026 →</span>
+  </header>
+
+  <ul class="artefact-list">
+
+    <!-- 01 · Skills Cloud / The Toolbelt -->
+    <li class="artefact">
+      <div class="artefact__no">
+        <span class="n">01</span>
+        2026-05
+      </div>
+      <div class="artefact__body">
+        <h2 class="artefact__title">
+          <a href="skills-cloud/">The Toolbelt — 100 Skills</a>
+        </h2>
+        <p class="artefact__sub">
+          A single-page visualisation of the 100 Claude Code skills currently installed on my machine. Categorised, colour-coded, double-click-to-run. An operator is not the sum of their tools — but the tools tell you what they keep promising themselves to do.
+        </p>
+        <div class="artefact__tags">
+          <span>HTML</span>
+          <span>Self-contained</span>
+          <span>~15 KB</span>
+          <span>No dependencies</span>
+          <span>Source: code/active/skills-cloud/</span>
+        </div>
+      </div>
+      <a class="artefact__cta" href="skills-cloud/" aria-label="Open The Toolbelt — 100 Skills">
+        Open ↗
+      </a>
+    </li>
+
+    <!-- Future slot — visible placeholder so the list never looks empty -->
+    <li class="artefact artefact--pending" aria-hidden="true">
+      <div class="artefact__no">
+        <span class="n">02</span>
+        TBD
+      </div>
+      <div class="artefact__body">
+        <h2 class="artefact__title">— Next artefact —</h2>
+        <p class="artefact__sub">
+          A slot held open. New artefacts get added here as they ship.
+        </p>
+        <div class="artefact__tags">
+          <span>Pending</span>
+        </div>
+      </div>
+      <span class="artefact__cta">Soon</span>
+    </li>
+
+  </ul>
+
+  <!-- ============= FOOTER ============= -->
+  <footer class="foot">
+    <div>© 2026 Riccardo Murciano</div>
+    <div class="foot__links">
+      <a href="/">Portfolio</a>
+      <a href="/chitchats/">Chit-Chats</a>
+      <a href="/productions/">Productions</a>
+      <a href="https://www.linkedin.com/in/riccardocloud/" target="_blank" rel="noopener">LinkedIn</a>
+    </div>
+  </footer>
+
+</main>
+
+</body>
+</html>

@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>The Toolbelt — 100 Skills</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,300;12..96,500;12..96,700;12..96,800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#0A0A0B; --bg2:#16161A; --bg3:#1F1F25;
+    --ink:#F4EBD9; --ink-soft:#8C8479; --mute:#4A4641;
+    --product:#F0A93B; --agents:#5ED9E0; --frontend:#FF4E8E;
+    --docs:#D9F25E; --eng:#FF6B3D; --meta:#B498F0; --sec:#E63946;
+    --rule:rgba(244,235,217,0.08);
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html,body{background:var(--bg);color:var(--ink);
+    font-family:"Bricolage Grotesque",system-ui,sans-serif;
+    -webkit-font-smoothing:antialiased;overflow-x:hidden}
+  body::before{ /* grain */
+    content:"";position:fixed;inset:0;pointer-events:none;z-index:50;opacity:.22;mix-blend-mode:overlay;
+    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");}
+  body::after{ /* radial glow */
+    content:"";position:fixed;inset:0;pointer-events:none;z-index:0;
+    background:
+      radial-gradient(60vw 60vh at 22% 18%, rgba(240,169,59,.07), transparent 60%),
+      radial-gradient(50vw 60vh at 85% 60%, rgba(94,217,224,.06), transparent 65%),
+      radial-gradient(45vw 45vh at 40% 95%, rgba(255,78,142,.05), transparent 60%);}
+  .mono{font-family:"JetBrains Mono",monospace;letter-spacing:.04em}
+
+  /* HERO */
+  header{position:relative;z-index:2;padding:64px 56px 40px;border-bottom:1px solid var(--rule)}
+  .crumbs{font-family:"JetBrains Mono",monospace;font-size:11px;letter-spacing:.32em;
+    text-transform:uppercase;color:var(--ink-soft);display:flex;gap:14px;align-items:center}
+  .crumbs::after{content:"";flex:1;height:1px;background:var(--rule);min-width:40px}
+  .hero{display:flex;align-items:flex-end;gap:24px;margin:22px 0 14px;flex-wrap:wrap}
+  .num{font-family:"Bricolage Grotesque",serif;font-weight:800;
+    font-size:clamp(120px,17vw,220px);line-height:.82;letter-spacing:-.05em;
+    background:linear-gradient(180deg,var(--ink) 0%,var(--ink) 55%,#A89C84 100%);
+    -webkit-background-clip:text;background-clip:text;color:transparent}
+  .slash{font-family:"Bricolage Grotesque",serif;font-weight:300;
+    font-size:clamp(80px,11vw,140px);color:var(--product);line-height:.82;
+    transform:translateY(-8px) rotate(8deg);display:inline-block}
+  .label{font-family:"Bricolage Grotesque",serif;font-weight:700;font-style:italic;
+    font-size:clamp(46px,7vw,96px);letter-spacing:-.03em;line-height:.9}
+  .meta{display:flex;gap:32px;flex-wrap:wrap;color:var(--ink-soft);
+    font-family:"JetBrains Mono",monospace;font-size:12.5px;
+    border-top:1px solid var(--rule);border-bottom:1px solid var(--rule);
+    padding:18px 0;margin:22px 0 0}
+  .meta span b{color:var(--ink);font-weight:600}
+  .meta span i{font-style:normal;font-size:10.5px;letter-spacing:.22em;
+    text-transform:uppercase;color:var(--product);display:block;margin-bottom:3px}
+  .controls{display:flex;gap:14px;flex-wrap:wrap;align-items:center;margin-top:26px}
+  #q{flex:1;min-width:260px;background:var(--bg2);border:1px solid var(--rule);
+    color:var(--ink);padding:13px 18px;font-family:inherit;font-size:15px;
+    border-radius:2px;outline:none;transition:border-color .25s}
+  #q:focus{border-color:var(--product)}
+  #q::placeholder{color:var(--mute)}
+  .hint{font-family:"JetBrains Mono",monospace;font-size:11px;color:var(--mute);
+    letter-spacing:.15em;text-transform:uppercase}
+
+  /* LEGEND */
+  .legend{display:flex;flex-wrap:wrap;gap:8px;margin-top:22px}
+  .leg{background:var(--bg2);border:1px solid var(--rule);
+    color:var(--ink-soft);padding:9px 14px 9px 12px;border-radius:999px;
+    font-family:"JetBrains Mono",monospace;font-size:11.5px;letter-spacing:.06em;
+    cursor:pointer;transition:.25s;display:flex;align-items:center;gap:9px;
+    user-select:none}
+  .leg:hover{color:var(--ink);background:var(--bg3)}
+  .leg .dot{width:9px;height:9px;border-radius:50%;background:var(--ink-soft);
+    box-shadow:0 0 12px var(--ink-soft)}
+  .leg.active{color:var(--ink);background:var(--bg3);border-color:rgba(244,235,217,0.2)}
+  .leg[data-cat="all"] .dot{background:linear-gradient(45deg,var(--product),var(--agents),var(--frontend));box-shadow:0 0 12px rgba(240,169,59,.4)}
+  .leg[data-cat="product"] .dot{background:var(--product);box-shadow:0 0 12px var(--product)}
+  .leg[data-cat="agents"] .dot{background:var(--agents);box-shadow:0 0 12px var(--agents)}
+  .leg[data-cat="frontend"] .dot{background:var(--frontend);box-shadow:0 0 12px var(--frontend)}
+  .leg[data-cat="docs"] .dot{background:var(--docs);box-shadow:0 0 12px var(--docs)}
+  .leg[data-cat="eng"] .dot{background:var(--eng);box-shadow:0 0 12px var(--eng)}
+  .leg[data-cat="meta"] .dot{background:var(--meta);box-shadow:0 0 12px var(--meta)}
+  .leg[data-cat="sec"] .dot{background:var(--sec);box-shadow:0 0 12px var(--sec)}
+
+  /* CLOUD */
+  .cloud{position:relative;z-index:1;padding:72px 56px 96px;
+    display:flex;flex-wrap:wrap;justify-content:center;align-items:center;
+    gap:.5em .55em;line-height:.95;max-width:1320px;margin:0 auto}
+  .skill{font-family:"Bricolage Grotesque",sans-serif;letter-spacing:-.025em;
+    display:inline-block;padding:.06em .14em;border-radius:3px;
+    transition:transform .35s cubic-bezier(.2,.7,.2,1),
+               color .25s, opacity .35s, filter .35s;
+    cursor:pointer;opacity:0;animation:fade .9s forwards;
+    will-change:transform,opacity}
+  @keyframes fade{to{opacity:1}}
+  .skill:hover{transform:translateY(-3px) scale(1.06) rotate(0deg) !important;
+    z-index:5;filter:drop-shadow(0 6px 18px rgba(0,0,0,.5))}
+  .cloud.has-focus .skill:not(.match){opacity:.12;filter:blur(.5px)}
+  .cloud.has-filter .skill:not(.in-cat){opacity:.12;filter:blur(.5px)}
+  .skill.copied::after{content:" ✓ copied";font-family:"JetBrains Mono",monospace;
+    font-size:.4em;color:var(--ink);opacity:.7}
+
+  .s-xl{font-size:clamp(40px,5.4vw,70px);font-weight:700}
+  .s-l {font-size:clamp(28px,3.7vw,46px);font-weight:600}
+  .s-m {font-size:clamp(20px,2.4vw,30px);font-weight:500}
+  .s-s {font-size:clamp(15px,1.7vw,21px);font-weight:400;opacity:.72}
+  .s-s:hover{opacity:1}
+
+  .c-product{color:var(--product)}
+  .c-agents{color:var(--agents)}
+  .c-frontend{color:var(--frontend)}
+  .c-docs{color:var(--docs)}
+  .c-eng{color:var(--eng)}
+  .c-meta{color:var(--meta)}
+  .c-sec{color:var(--sec)}
+
+  /* FOOTER */
+  footer{position:relative;z-index:2;padding:36px 56px 48px;
+    border-top:1px solid var(--rule);display:flex;justify-content:space-between;
+    gap:30px;flex-wrap:wrap;align-items:center}
+  footer .big{font-family:"Bricolage Grotesque",serif;font-style:italic;
+    font-weight:600;font-size:clamp(20px,2.4vw,30px);max-width:34ch;letter-spacing:-.02em}
+  footer .src{font-family:"JetBrains Mono",monospace;font-size:11px;
+    color:var(--mute);line-height:1.9;text-align:right}
+  footer .src b{color:var(--ink-soft)}
+
+  @media (max-width:768px){
+    header,footer{padding-left:24px;padding-right:24px}
+    .cloud{padding:48px 18px 72px}
+    footer{flex-direction:column;align-items:flex-start}
+    footer .src{text-align:left}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="crumbs"><span>The Toolbelt</span><span>№ 01</span></div>
+  <div class="hero">
+    <span class="num">100</span>
+    <span class="slash">/</span>
+    <span class="label">skills</span>
+  </div>
+  <div class="meta">
+    <span><i>Operator</i><b>Riccardo</b></span>
+    <span><i>Domains</i><b>7</b></span>
+    <span><i>Instruments</i><b>100</b></span>
+    <span><i>Edition</i><b>May 2026</b></span>
+    <span><i>Surface</i><b>Claude Code</b></span>
+  </div>
+  <div class="controls">
+    <input id="q" type="text" placeholder="filter the cloud — try 'langchain', 'workshop', 'whoop'…" autocomplete="off">
+    <span class="hint">↳ click a skill to copy · click a domain to filter</span>
+  </div>
+  <div class="legend" id="legend"></div>
+</header>
+
+<section class="cloud" id="cloud"></section>
+
+<footer>
+  <div class="big">An operator is not the sum of their tools — but the tools tell you what they keep promising themselves to do.</div>
+  <div class="src">
+    The Toolbelt · v1<br>
+    <b>installed at</b> ~/.claude/skills<br>
+    last counted 2026·05
+  </div>
+</footer>
+
+<script>
+const SKILLS = [
+  // PRODUCT & STRATEGY
+  ["to-prd","product"],["acquisition-channel-advisor","product"],["ai-shaped-readiness-advisor","product"],
+  ["altitude-horizon-framework","product"],["business-health-diagnostic","product"],
+  ["company-research","product"],["customer-journey-map","product"],
+  ["customer-journey-mapping-workshop","product"],["director-readiness-advisor","product"],
+  ["discovery-interview-prep","product"],["discovery-process","product"],["eol-message","product"],
+  ["epic-breakdown-advisor","product"],["epic-hypothesis","product"],["executive-onboarding-playbook","product"],
+  ["feature-investment-advisor","product"],["finance-based-pricing-advisor","product"],
+  ["finance-metrics-quickref","product"],["framework-selection","product"],["jobs-to-be-done","product"],
+  ["lean-ux-canvas","product"],["opportunity-solution-tree","product"],["pestel-analysis","product"],
+  ["pol-probe","product"],["pol-probe-advisor","product"],["positioning-statement","product"],
+  ["positioning-workshop","product"],["prd-development","product"],["press-release","product"],
+  ["prioritization-advisor","product"],["problem-framing-canvas","product"],["problem-statement","product"],
+  ["product-sense-interview-answer","product"],["product-strategy-session","product"],["proto-persona","product"],
+  ["recommendation-canvas","product"],["roadmap-planning","product"],
+  ["saas-economics-efficiency-metrics","product"],["saas-revenue-growth-metrics","product"],
+  ["storyboard","product"],["tam-sam-som-calculator","product"],["user-story","product"],
+  ["user-story-mapping","product"],["user-story-mapping-workshop","product"],
+  ["user-story-splitting","product"],["vp-cpo-readiness-advisor","product"],["workshop-facilitation","product"],
+  ["triage","product"],
+
+  // AGENTS / LANGCHAIN
+  ["context-engineering-advisor","agents"],["deep-agents-core","agents"],["deep-agents-memory","agents"],
+  ["deep-agents-orchestration","agents"],["langchain-dependencies","agents"],["langchain-fundamentals","agents"],
+  ["langchain-middleware","agents"],["langchain-rag","agents"],["langgraph-fundamentals","agents"],
+  ["langgraph-human-in-the-loop","agents"],["langgraph-persistence","agents"],
+
+  // FRONTEND / DESIGN / ANIMATION
+  ["animejs","frontend"],["css-animations","frontend"],["frontend-design","frontend"],["gsap","frontend"],
+  ["hyperframes","frontend"],["hyperframes-cli","frontend"],["hyperframes-media","frontend"],
+  ["hyperframes-registry","frontend"],["lottie","frontend"],["remotion-to-hyperframes","frontend"],
+  ["tailwind","frontend"],["three","frontend"],["typegpu","frontend"],["waapi","frontend"],
+  ["website-to-hyperframes","frontend"],
+
+  // DOCS / MEDIA / OUTPUT
+  ["application-docs","docs"],["chitchats-brief-mobile","docs"],["clean-pdf","docs"],
+  ["defuddle","docs"],["json-canvas","docs"],["obsidian-bases","docs"],["obsidian-cli","docs"],
+  ["obsidian-markdown","docs"],["podcast-librarian","docs"],["video-use","docs"],
+
+  // ENGINEERING / CODEBASE
+  ["contribute-catalog","eng"],["diagnose","eng"],["disk-hygiene","eng"],["file-organization","eng"],
+  ["graphify","eng"],["improve-codebase-architecture","eng"],["skill-authoring-workflow","eng"],
+  ["tdd","eng"],["to-issues","eng"],["write-a-skill","eng"],
+
+  // META / SETUP
+  ["caveman","meta"],["grill-me","meta"],["grill-with-docs","meta"],
+  ["setup-matt-pocock-skills","meta"],["zoom-out","meta"],
+
+  // SECURITY
+  ["cybersecurity-analyst","sec"],
+];
+
+const CAT_LABEL = {
+  all:"all 100",
+  product:"product & strategy",
+  agents:"agents & langchain",
+  frontend:"frontend & design",
+  docs:"docs & media",
+  eng:"engineering",
+  meta:"meta & setup",
+  sec:"security",
+};
+
+// Build legend
+const legendEl = document.getElementById("legend");
+const counts = {};
+SKILLS.forEach(([_,c])=> counts[c]=(counts[c]||0)+1);
+const cats = ["all","product","agents","frontend","docs","eng","meta","sec"];
+cats.forEach(c=>{
+  const b=document.createElement("button");
+  b.className="leg"; b.dataset.cat=c;
+  b.innerHTML=`<span class="dot"></span><span>${CAT_LABEL[c]}${c==="all"?"":" · "+counts[c]}</span>`;
+  legendEl.appendChild(b);
+});
+
+// FNV-1a-ish hash for deterministic size assignment
+function hash(s){let h=2166136261; for(let i=0;i<s.length;i++){h^=s.charCodeAt(i);h=(h*16777619)>>>0;} return h;}
+function sizeFor(name){
+  const h=hash(name), r=h%100;
+  if(r<8) return "s-xl";
+  if(r<30) return "s-l";
+  if(r<72) return "s-m";
+  return "s-s";
+}
+function rotFor(name){
+  const h=hash(name+"r"), r=(h%500)/100 - 2.5; // -2.5° .. +2.5°
+  return r.toFixed(2);
+}
+
+// Render cloud
+const cloud=document.getElementById("cloud");
+// Shuffle for visual variety but deterministic (seeded by index)
+const shuffled=[...SKILLS].sort((a,b)=>hash(a[0]+"x")-hash(b[0]+"x"));
+shuffled.forEach(([name,cat],i)=>{
+  const sp=document.createElement("span");
+  const sz=sizeFor(name), rot=rotFor(name);
+  sp.className=`skill ${sz} c-${cat}`;
+  sp.textContent=name;
+  sp.dataset.name=name;
+  sp.dataset.cat=cat;
+  sp.style.transform=`rotate(${rot}deg)`;
+  sp.style.animationDelay=(60+i*7)+"ms";
+  sp.title=`${name} · ${CAT_LABEL[cat]}`;
+  cloud.appendChild(sp);
+});
+
+// Filter input
+const q=document.getElementById("q");
+q.addEventListener("input",()=>{
+  const v=q.value.trim().toLowerCase();
+  if(!v){ cloud.classList.remove("has-focus");
+    cloud.querySelectorAll(".skill").forEach(s=>s.classList.remove("match"));
+    return; }
+  cloud.classList.add("has-focus");
+  cloud.querySelectorAll(".skill").forEach(s=>{
+    s.classList.toggle("match", s.dataset.name.toLowerCase().includes(v));
+  });
+});
+
+// Legend filter
+let activeCat="all";
+legendEl.addEventListener("click",e=>{
+  const b=e.target.closest(".leg"); if(!b) return;
+  const c=b.dataset.cat;
+  activeCat=c;
+  legendEl.querySelectorAll(".leg").forEach(x=>x.classList.toggle("active", x.dataset.cat===c));
+  if(c==="all"){
+    cloud.classList.remove("has-filter");
+    cloud.querySelectorAll(".skill").forEach(s=>s.classList.remove("in-cat"));
+  } else {
+    cloud.classList.add("has-filter");
+    cloud.querySelectorAll(".skill").forEach(s=>s.classList.toggle("in-cat", s.dataset.cat===c));
+  }
+});
+
+// Click skill to copy
+cloud.addEventListener("click",e=>{
+  const s=e.target.closest(".skill"); if(!s) return;
+  const name=s.dataset.name;
+  navigator.clipboard?.writeText(name);
+  s.classList.add("copied");
+  setTimeout(()=>s.classList.remove("copied"),900);
+});
+</script>
+</body>
+</html>
