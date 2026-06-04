@@ -444,6 +444,9 @@
       const metrics = [
         ["11", "Episodes"], ["12", "Voices"], ["10", "Disciplines"], ["8", "Countries"],
       ];
+      const perf = [
+        ["73", "Consumption hours"], ["+32", "Followers"], ["17", "Avg streams & downloads / episode"],
+      ];
       const orgs = ["McKinsey", "Tesla", "Tiffany & Co.", "Leonardo", "Frog Design", "Avanade", "LEV Foundation"];
       return (
         <section id="voice" className="relative w-full min-h-screen bg-black px-6 md:px-16 lg:px-20 py-28 flex flex-col justify-center">
@@ -465,6 +468,19 @@
             ))}
           </div>
           <Reveal delay={0.3}>
+            <p className="text-xs font-heading font-bold tracking-[2px] text-accent mb-3">PERFORMANCE · SPOTIFY, ALL-TIME</p>
+          </Reveal>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
+            {perf.map(([n, l], i) => (
+              <Reveal key={l} delay={0.34 + i * 0.07}>
+                <div className="liquid-glass rounded-[1.25rem] p-6 flex items-baseline gap-3">
+                  <div className="font-heading italic text-accent text-4xl md:text-5xl tracking-[-2px] leading-none">{n}</div>
+                  <div className="text-white/70 font-body text-sm leading-tight">{l}</div>
+                </div>
+              </Reveal>
+            ))}
+          </div>
+          <Reveal delay={0.5}>
             <div className="glass-accent rounded-[1.25rem] p-7 flex flex-col md:flex-row md:items-center gap-6">
               <div className="flex-1">
                 <p className="text-xs font-heading font-bold tracking-[2px] text-accent mb-3">GUESTS HAVE WORKED AT</p>
