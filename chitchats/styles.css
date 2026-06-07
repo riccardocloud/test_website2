@@ -298,6 +298,19 @@ button { font: inherit; cursor: pointer; border: 0; background: none; color: inh
 }
 .numbers__intro p { margin-top: 24px; font-size: 15px; color: var(--ink-soft); line-height: 1.6; max-width: 460px; }
 
+/* Live "latest episode" pill — populated by the iTunes auto-fetch on load */
+.cc-latest {
+  display: inline-flex; align-items: center; gap: 8px;
+  margin-top: 18px;
+  font-family: var(--mono); font-size: 12px; letter-spacing: 0.6px;
+  text-transform: uppercase; color: var(--ink);
+  border: 1px solid var(--rule); border-radius: 9999px;
+  padding: 9px 16px; line-height: 1.2;
+  transition: border-color 160ms ease, transform 160ms ease;
+}
+.cc-latest::after { content: "→"; color: var(--green); }
+.cc-latest:hover { border-color: var(--green); transform: translateX(2px); }
+
 .metric-stack { display: grid; }
 .metric-row {
   display: grid; grid-template-columns: 140px 1fr auto;

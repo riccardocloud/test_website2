@@ -87,7 +87,7 @@
 
 <!-- ========== HERO — 4 + wordmark + 4 ========== -->
 <section class="hero">
-  <div class="hero__kicker">Season 01 · 12 episodes · New every other Tuesday</div>
+  <div class="hero__kicker">Season 01 · <span id="cc-kicker-count">12</span> episodes · New every other Tuesday</div>
 
   <!-- Portrait band — sits directly above the central CHIT-CHATS title, full-bleed, transparent -->
   <img class="hero__band" src="assets/guests-band.png" alt="The Chit-Chats guests: Riccardo Murciano, Bibi Deflander, Richard van der Meer, Cristiano De Nobili, Marina Geymonat, Chiara Aprilis, Florian Fürst, Calvin Kwok, David Wood, Raymond Miranda, Simon Veithen, Peter Grafe" loading="eager" />
@@ -218,7 +218,7 @@
     <p>A roster of guests that spans theoretical physics, AI-native marketing, luxury commerce, longevity science, diplomacy and the philosophy of fear. Every episode earns its place — no two overlap.</p>
   </div>
   <div class="metric-stack">
-    <div class="metric-row"><div class="metric-row__n">12</div><div class="metric-row__label">Episodes</div><div class="metric-row__idx">/ 01</div></div>
+    <div class="metric-row"><div class="metric-row__n" id="cc-episode-count">12</div><div class="metric-row__label">Episodes</div><div class="metric-row__idx">/ 01</div></div>
     <div class="metric-row"><div class="metric-row__n">13</div><div class="metric-row__label">Voices</div><div class="metric-row__idx">/ 02</div></div>
     <div class="metric-row"><div class="metric-row__n">10</div><div class="metric-row__label">Disciplines</div><div class="metric-row__idx">/ 03</div></div>
     <div class="metric-row"><div class="metric-row__n">8</div><div class="metric-row__label">Countries</div><div class="metric-row__idx">/ 04</div></div>
@@ -239,6 +239,7 @@
   <div class="wrap">
     <div class="kicker">All episodes</div>
     <h2>The full conversation list</h2>
+    <a id="cc-latest" class="cc-latest" hidden href="https://podcasts.apple.com/jp/podcast/chit-chats/id1892830521?l=en-US" target="_blank" rel="noopener"></a>
   </div>
   <div class="episodes__grid">
 
@@ -465,6 +466,53 @@
     <a href="https://riccardocloud.com/chitchats/">riccardocloud.com/chitchats</a>
   </div>
 </footer>
+
+<!-- ===========================================================
+     Live podcast sync — progressive enhancement.
+     On load, fetch the public iTunes Lookup API (CORS-enabled,
+     no key) and:
+       · bump the episode count IF the catalog reports more than
+         the hard-coded floor (never regresses to a lower number),
+       · surface the latest published episode as a pill.
+     Any failure is silent — the static values stay as the fallback.
+     Note: Spotify creator analytics (plays, hours, followers) are
+     private and cannot be fetched here; those remain static.
+     =========================================================== -->
+<script>
+  (function () {
+    var APPLE_SHOW = "https://podcasts.apple.com/jp/podcast/chit-chats/id1892830521?l=en-US";
+    var LOOKUP = "https://itunes.apple.com/lookup?id=1892830521&country=jp&media=podcast&entity=podcastEpisode&limit=12";
+    function bump(el, n) {
+      if (!el || !n) return;
+      var floor = parseInt((el.textContent || "").replace(/\D/g, ""), 10) || 0;
+      if (n > floor) el.textContent = String(n);
+    }
+    try {
+      fetch(LOOKUP, { cache: "no-store" })
+        .then(function (r) { return r.ok ? r.json() : Promise.reject(r.status); })
+        .then(function (data) {
+          var results = (data && data.results) || [];
+          if (!results.length) return;
+          var show = results[0] || {};
+          var eps = results.filter(function (x) { return x.wrapperType === "podcastEpisode"; });
+          var count = Math.max(parseInt(show.trackCount, 10) || 0, eps.length);
+          bump(document.getElementById("cc-episode-count"), count);
+          bump(document.getElementById("cc-kicker-count"), count);
+          if (eps.length) {
+            eps.sort(function (a, b) { return new Date(b.releaseDate) - new Date(a.releaseDate); });
+            var latest = eps[0];
+            var el = document.getElementById("cc-latest");
+            if (el && latest && latest.trackName) {
+              el.textContent = "Latest · " + latest.trackName;
+              el.href = latest.trackViewUrl || APPLE_SHOW;
+              el.hidden = false;
+            }
+          }
+        })
+        .catch(function () { /* keep static fallback */ });
+    } catch (e) { /* keep static fallback */ }
+  })();
+</script>
 
 </body>
 </html>
