@@ -1,5 +1,5 @@
 /* ============================================================
-   CHIT CHATS — Podcast Landing Page  v2
+   CHIT CHATS, Podcast Landing Page  v2
    Design: logo-led proof → stats → content hierarchy
    ============================================================ */
 
@@ -10,7 +10,7 @@ body.podcast-page {
   font-family: 'Heebo', sans-serif;
 }
 
-/* Inline links surfaced from podcast metadata — subtle, no-shout */
+/* Inline links surfaced from podcast metadata, subtle, no-shout */
 .podcast-page .link-soft {
   color: inherit;
   text-decoration: none;
@@ -119,7 +119,7 @@ body.podcast-page .documents .btn {
 }
 
 /* ════════════════════════════════════════════════════════════
-   PROOF SECTION — the whole first screen
+   PROOF SECTION, the whole first screen
    ════════════════════════════════════════════════════════════ */
 .proof-section {
   padding: 0 0 2.75rem;
@@ -127,7 +127,7 @@ body.podcast-page .documents .btn {
   margin-bottom: 2.5rem;
 }
 
-/* Brand mark — small, secondary */
+/* Brand mark, small, secondary */
 .brand-mark {
   font-size: 0.65rem;
   font-weight: 700;
@@ -149,7 +149,7 @@ body.podcast-page .documents .btn {
   flex-shrink: 0;
 }
 
-/* Proof headline — the real h1, but not giant */
+/* Proof headline, the real h1, but not giant */
 .proof-headline {
   font-size: clamp(1.55rem, 3.2vw, 2.25rem);
   font-weight: 700;
@@ -185,7 +185,7 @@ body.podcast-page .documents .btn {
   border-bottom: 1px solid rgba(255,255,255,0.05);
 }
 
-/* SVG logo images — all rendered white on dark */
+/* SVG logo images, all rendered white on dark */
 .proof-logos .logo-img {
   display: block;
   height: 22px;
@@ -295,7 +295,7 @@ body.podcast-page .documents .btn {
 }
 
 /* ════════════════════════════════════════════════════════════
-   ROLES STRIP — lightweight, no card
+   ROLES STRIP, lightweight, no card
    ════════════════════════════════════════════════════════════ */
 .roles-strip {
   margin-bottom: 2.25rem;

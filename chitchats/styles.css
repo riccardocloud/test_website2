@@ -1,5 +1,5 @@
 /* =====================================================================
-   Chit-Chats Podcast — landing page styles
+   Chit-Chats Podcast, landing page styles
    Single stylesheet. Mobile-first. No framework.
    ===================================================================== */
 
@@ -61,7 +61,7 @@ button { font: inherit; cursor: pointer; border: 0; background: none; color: inh
 .btn-ghost   { border: 1px solid var(--ink); color: var(--ink); }
 .btn-ghost:hover { background: var(--ink); color: var(--paper); }
 
-/* Ribbon — SVG sits inline in markup as <svg class="ribbon">. Token for size. */
+/* Ribbon, SVG sits inline in markup as <svg class="ribbon">. Token for size. */
 .ribbon { display: block; }
 
 /* Wordmark stacked caps */
@@ -71,7 +71,7 @@ button { font: inherit; cursor: pointer; border: 0; background: none; color: inh
   text-transform: uppercase;
 }
 
-/* Guest avatar — monogram placeholder that swaps for <img> if loaded */
+/* Guest avatar, monogram placeholder that swaps for <img> if loaded */
 .avatar {
   width: 100%; aspect-ratio: 1 / 1; position: relative; overflow: hidden;
   background: var(--avatar-bg, #2a2a2a); color: var(--avatar-fg, #f5f1ea);
@@ -117,7 +117,7 @@ button { font: inherit; cursor: pointer; border: 0; background: none; color: inh
 }
 
 /* =====================================================================
-   HERO — Symmetric 4 + center + 4 Landi composition
+   HERO, Symmetric 4 + center + 4 Landi composition
    ===================================================================== */
 .hero {
   background: var(--paper-alt);
@@ -154,7 +154,7 @@ button { font: inherit; cursor: pointer; border: 0; background: none; color: inh
 }
 .hero__ctas { display: flex; justify-content: center; gap: 10px; margin-top: 28px; flex-wrap: wrap; }
 
-/* Tablet — collapse to single column, reuse the two sides below */
+/* Tablet, collapse to single column, reuse the two sides below */
 @media (max-width: 960px) {
   .hero__grid { grid-template-columns: 1fr; }
 }
@@ -187,7 +187,7 @@ button { font: inherit; cursor: pointer; border: 0; background: none; color: inh
 .guest-row__ep { font-family: var(--mono); font-size: 11px; color: var(--ink-soft); }
 
 /* =====================================================================
-   GUEST BAND — transparent PNG, sits above the central lockup
+   GUEST BAND, transparent PNG, sits above the central lockup
    ===================================================================== */
 .hero__band {
   display: block;
@@ -203,7 +203,7 @@ button { font: inherit; cursor: pointer; border: 0; background: none; color: inh
 }
 
 /* =====================================================================
-   FEATURED EPISODE STRIP — full-bleed split
+   FEATURED EPISODE STRIP, full-bleed split
    ===================================================================== */
 .featured {
   display: grid; grid-template-columns: 1.2fr 1fr;
@@ -282,7 +282,7 @@ button { font: inherit; cursor: pointer; border: 0; background: none; color: inh
 }
 
 /* =====================================================================
-   BY THE NUMBERS — stack metrics
+   BY THE NUMBERS, stack metrics
    ===================================================================== */
 .numbers {
   padding: clamp(56px, 7vw, 96px) 24px;
@@ -298,7 +298,7 @@ button { font: inherit; cursor: pointer; border: 0; background: none; color: inh
 }
 .numbers__intro p { margin-top: 24px; font-size: 15px; color: var(--ink-soft); line-height: 1.6; max-width: 460px; }
 
-/* Live "latest episode" pill — populated by the iTunes auto-fetch on load */
+/* Live "latest episode" pill, populated by the iTunes auto-fetch on load */
 .cc-latest {
   display: inline-flex; align-items: center; gap: 8px;
   margin-top: 18px;
@@ -331,7 +331,7 @@ button { font: inherit; cursor: pointer; border: 0; background: none; color: inh
   .metric-row__n { font-size: 40px; }
 }
 
-/* Performance KPIs (Spotify, all-time) — full-width strip under the roster */
+/* Performance KPIs (Spotify, all-time), full-width strip under the roster */
 .perf {
   grid-column: 1 / -1;
   border-top: 1px solid var(--rule);
@@ -388,7 +388,7 @@ button { font: inherit; cursor: pointer; border: 0; background: none; color: inh
 .ep-card .cover { width: 100%; box-shadow: none; }
 
 /* =====================================================================
-   LOGOS STRIP — companies guests have worked at
+   LOGOS STRIP, companies guests have worked at
    ===================================================================== */
 .logos {
   padding: clamp(48px, 5vw, 64px) 24px;
@@ -429,10 +429,10 @@ button { font: inherit; cursor: pointer; border: 0; background: none; color: inh
 }
 
 /* =====================================================================
-   LINK AFFORDANCES — surfaced on linkified guest names, EP numbers, etc.
+   LINK AFFORDANCES, surfaced on linkified guest names, EP numbers, etc.
    ===================================================================== */
 
-/* Inline links inside guest-row name/role — subtle underline-on-hover */
+/* Inline links inside guest-row name/role, subtle underline-on-hover */
 .guest-row__name a,
 .guest-row__role a {
   color: inherit;
@@ -447,7 +447,7 @@ button { font: inherit; cursor: pointer; border: 0; background: none; color: inh
 .guest-row__name a:hover,
 .guest-row__role a:hover { background-size: 100% 1px; }
 
-/* EP number (now an anchor) — keep it inert visually, hover reveals it */
+/* EP number (now an anchor), keep it inert visually, hover reveals it */
 a.guest-row__ep {
   color: var(--ink-soft);
   text-decoration: none;
@@ -458,7 +458,7 @@ a.guest-row__ep:hover {
   transform: translateX(2px);
 }
 
-/* Featured episode — guest name + role inline links */
+/* Featured episode, guest name + role inline links */
 .featured__guest a,
 .featured__role a {
   color: inherit;
@@ -470,7 +470,7 @@ a.guest-row__ep:hover {
 .featured__guest a:hover,
 .featured__role a:hover { opacity: 0.7; }
 
-/* Logos strip — linked items get hover underline */
+/* Logos strip, linked items get hover underline */
 .logos__item--link {
   cursor: pointer;
   position: relative;
@@ -488,11 +488,11 @@ a.guest-row__ep:hover {
 .logos__item--link:hover { opacity: 0.85; }
 .logos__item--link:hover::after { opacity: 0.6; }
 
-/* Episode cards — keep them as block links but lift on hover (already styled) */
+/* Episode cards, keep them as block links but lift on hover (already styled) */
 .ep-card { color: inherit; }
 
 /* =====================================================================
-   EPISODE NOTES — references section after the logos strip
+   EPISODE NOTES, references section after the logos strip
    ===================================================================== */
 .notes {
   padding: clamp(56px, 7vw, 96px) 24px;

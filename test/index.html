@@ -3,15 +3,15 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Riccardo Murciano — Consultant · Builder · Host</title>
-  <meta name="description" content="Riccardo Murciano — AI-native consultant working at the intersection of technology, strategy, and creativity. Process intelligence, applied AI, and a podcast about people worth listening to." />
+  <title>Riccardo Murciano · Consultant · Builder · Host</title>
+  <meta name="description" content="Riccardo Murciano, AI-native consultant working at the intersection of technology, strategy, and creativity. Process intelligence, applied AI, and a podcast about people worth listening to." />
   <meta name="author" content="Riccardo Murciano" />
   <link rel="canonical" href="https://riccardocloud.com/test/" />
 
   <!-- Open Graph -->
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="Riccardo Murciano" />
-  <meta property="og:title" content="Riccardo Murciano — Consultant · Builder · Host" />
+  <meta property="og:title" content="Riccardo Murciano · Consultant · Builder · Host" />
   <meta property="og:description" content="AI-native consultant working at the intersection of technology, strategy, and creativity." />
   <meta property="og:url" content="https://riccardocloud.com/test/" />
   <meta name="twitter:card" content="summary_large_image" />
@@ -52,7 +52,7 @@
     #root { background: #000; }
     ::selection { background: #00B87B; color: #000; }
 
-    /* ── 1. SUBTLE GLASS — nav, chips, cards ──────────────────── */
+    /* ── 1. SUBTLE GLASS, nav, chips, cards ──────────────────── */
     .liquid-glass {
       background: rgba(255, 255, 255, 0.01);
       background-blend-mode: luminosity;
@@ -73,7 +73,7 @@
       -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
       -webkit-mask-composite: xor; mask-composite: exclude; pointer-events: none;
     }
-    /* ── 2. STRONG GLASS — primary CTA only ───────────────────── */
+    /* ── 2. STRONG GLASS, primary CTA only ───────────────────── */
     .liquid-glass-strong {
       background: rgba(255, 255, 255, 0.01);
       background-blend-mode: luminosity;
@@ -91,7 +91,7 @@
       -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
       -webkit-mask-composite: xor; mask-composite: exclude; pointer-events: none;
     }
-    /* ── 3. ACCENT GLASS — the one "hot" card (rgba = #00B87B) ── */
+    /* ── 3. ACCENT GLASS, the one "hot" card (rgba = #00B87B) ── */
     .glass-accent {
       background: rgba(0, 184, 123, 0.06);
       backdrop-filter: blur(4px); -webkit-backdrop-filter: blur(4px);
@@ -271,7 +271,7 @@
     window.Navbar = Navbar;
   </script>
 
-  <!-- SECTION — HERO -->
+  <!-- SECTION, HERO -->
   <script type="text/babel">
     function Hero() {
       const { motion } = window.Motion;
@@ -286,11 +286,11 @@
           <div className="relative z-10 flex flex-col h-full items-center justify-center text-center px-4">
             <motion.div {...blurIn} transition={{ duration: 0.6, ease: "easeOut", delay: 0.3 }} className="liquid-glass rounded-full inline-flex items-center gap-2 mb-8">
               <span className="bg-accent text-black rounded-full px-3 py-1 text-xs font-semibold font-body">Available</span>
-              <span className="text-sm text-white/90 font-body pr-3">Consultant · Builder · Host — Amsterdam</span>
+              <span className="text-sm text-white/90 font-body pr-3">Consultant · Builder · Host, Amsterdam</span>
             </motion.div>
             <BlurText text="Riccardo Murciano" className="text-6xl md:text-8xl lg:text-[7rem] font-heading italic text-white leading-[0.85] max-w-5xl justify-center tracking-[-3px]" />
             <motion.p {...blurIn} transition={{ duration: 0.6, ease: "easeOut", delay: 0.9 }} className="mt-6 text-base md:text-xl text-white/90 max-w-2xl font-body font-light leading-snug">
-              I work at the intersection of technology, strategy, and creativity — turning complex systems into things people can actually use.
+              I work at the intersection of technology, strategy, and creativity, turning complex systems into things people can actually use.
             </motion.p>
             <motion.div {...blurIn} transition={{ duration: 0.6, ease: "easeOut", delay: 1.1 }} className="mt-8 liquid-glass rounded-full px-5 py-2.5">
               <span className="text-sm text-white font-body">Process Intelligence · Applied AI · MSc Business Information Management</span>
@@ -306,13 +306,13 @@
     window.Hero = Hero;
   </script>
 
-  <!-- SECTION 01 — ABOUT -->
+  <!-- SECTION 01, ABOUT -->
   <script type="text/babel">
     function About() {
       const { Reveal, Eyebrow, SectionTitle } = window;
       const stats = [
         { big: "5+", a: false, label: "years across consulting, fintech & media" },
-        { big: "3", a: false, label: "languages — German · English · Italian (native)" },
+        { big: "3", a: false, label: "languages, German · English · Italian (native)" },
         { big: "12", a: true, label: "podcast episodes hosted to date" },
       ];
       return (
@@ -324,7 +324,7 @@
               <div className="liquid-glass rounded-[1.25rem] p-7 h-full">
                 <p className="text-xs font-heading font-bold tracking-[2px] text-white/50 mb-5">WHAT I DO</p>
                 <p className="text-white font-body font-light text-[15px] leading-relaxed">
-                  I specialize in making complex systems usable — analytics, AI-enabled workflows, and client-facing operating models — by pairing technical fluency with clear strategic framing.
+                  I specialize in making complex systems usable, analytics, AI-enabled workflows, and client-facing operating models, by pairing technical fluency with clear strategic framing.
                 </p>
               </div>
             </Reveal>
@@ -356,18 +356,18 @@
     window.About = About;
   </script>
 
-  <!-- SECTION 02 — WORK -->
+  <!-- SECTION 02, WORK -->
   <script type="text/babel">
     function Work() {
       const { Reveal, Eyebrow, SectionTitle } = window;
       const roles = [
-        { co: "HighRadius", role: "AI / Design Consultant", when: "Oct 2024 — Present", hot: true,
-          note: "Forward-deployed across F100/500 accounts — data-transformation pipelines and ML models for predictive analytics via NLP and local LLMs. Discovery → POC → production ownership.", href: "https://www.highradius.com/" },
-        { co: "Apolix", role: "Process Intelligence Consultant", when: "Mar — Oct 2024", hot: false,
+        { co: "HighRadius", role: "AI / Design Consultant", when: "Oct 2024 - Present", hot: true,
+          note: "Forward-deployed across F100/500 accounts, data-transformation pipelines and ML models for predictive analytics via NLP and local LLMs. Discovery → POC → production ownership.", href: "https://www.highradius.com/" },
+        { co: "Apolix", role: "Process Intelligence Consultant", when: "Mar - Oct 2024", hot: false,
           note: "Led analysis and optimization of financial and operational processes for large B2B clients across South Africa, France and Germany. Built custom Celonis models on SAP & MS Dynamics.", href: "https://apolix.global/" },
-        { co: "Insify", role: "Product Analyst", when: "Sep 2023 — Feb 2024", hot: false,
+        { co: "Insify", role: "Product Analyst", when: "Sep 2023 - Feb 2024", hot: false,
           note: "Built a normalized custom Performance Index, Python data-viz solutions, and a GPT-based onboarding tool for new employees.", href: "https://insify.nl/" },
-        { co: "BCG Platinion", role: "Consultant Intern", when: "Jun — Aug 2018", hot: false,
+        { co: "BCG Platinion", role: "Consultant Intern", when: "Jun - Aug 2018", hot: false,
           note: "Supported the development of IT concepts and streamlined administrative processes under senior leadership.", href: "https://bcgplatinion.com/" },
       ];
       return (
@@ -396,7 +396,7 @@
     window.Work = Work;
   </script>
 
-  <!-- SECTION 03 — TOOLKIT -->
+  <!-- SECTION 03, TOOLKIT -->
   <script type="text/babel">
     function Toolkit() {
       const { Reveal, Eyebrow, SectionTitle } = window;
@@ -427,7 +427,7 @@
             <div className="glass-accent rounded-[1.25rem] p-6 mt-6">
               <p className="text-base md:text-lg font-body">
                 <span className="text-accent font-semibold">The throughline: </span>
-                <span className="text-white">technical capability that survives contact with real adoption — tools people actually keep using.</span>
+                <span className="text-white">technical capability that survives contact with real adoption, tools people actually keep using.</span>
               </p>
             </div>
           </Reveal>
@@ -437,7 +437,7 @@
     window.Toolkit = Toolkit;
   </script>
 
-  <!-- SECTION 04 — CHIT CHATS -->
+  <!-- SECTION 04, CHIT CHATS -->
   <script type="text/babel">
     function Voice() {
       const { Reveal, Eyebrow, SectionTitle, ArrowUpRight } = window;
@@ -454,7 +454,7 @@
           <SectionTitle className="text-4xl md:text-6xl mb-6">A podcast about<br/>people worth <span className="text-accent">listening to.</span></SectionTitle>
           <Reveal delay={0.1}>
             <p className="text-white/80 font-body font-light text-base md:text-lg max-w-3xl mb-10 leading-relaxed">
-              Long-form conversations with founders, scientists, diplomats and thinkers — from AI-native marketing and longevity science to luxury, diplomacy and theoretical physics.
+              Long-form conversations with founders, scientists, diplomats and thinkers, from AI-native marketing and longevity science to luxury, diplomacy and theoretical physics.
             </p>
           </Reveal>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-6">
@@ -512,15 +512,15 @@
     window.Voice = Voice;
   </script>
 
-  <!-- SECTION 05 — BEYOND -->
+  <!-- SECTION 05, BEYOND -->
   <script type="text/babel">
     function Beyond() {
       const { Reveal, Eyebrow, SectionTitle, ArrowUpRight } = window;
       const cards = [
         { t: "Productions", k: "FILM · MOTION · CONTENT", href: "/productions/",
-          body: "A decade of films, documentaries, and branded pieces — directing, shooting, and editing with intention. From Maastricht skateparks to Cape Town summits." },
+          body: "A decade of films, documentaries, and branded pieces, directing, shooting, and editing with intention. From Maastricht skateparks to Cape Town summits." },
         { t: "Artefacts", k: "SELF-CONTAINED EXPERIMENTS", href: "/artefacts/",
-          body: "A growing index of single-file things I've shipped — visualisations, experiments, and notes. Most open with a double-click. None depend on a backend." },
+          body: "A growing index of single-file things I've shipped, visualisations, experiments, and notes. Most open with a double-click. None depend on a backend." },
       ];
       return (
         <section id="beyond" className="relative w-full min-h-screen bg-black px-6 md:px-16 lg:px-20 py-28 flex flex-col justify-center">
@@ -547,7 +547,7 @@
     window.Beyond = Beyond;
   </script>
 
-  <!-- SECTION 06 — CLOSE / CONTACT -->
+  <!-- SECTION 06, CLOSE / CONTACT -->
   <script type="text/babel">
     function Close() {
       const { Reveal, FadingVideo, BlurText, ArrowUpRight } = window;

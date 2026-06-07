@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="utf-8" />
-<title>Chit-Chats — LinkedIn Banner (1584×396)</title>
+<title>Chit-Chats, LinkedIn Banner (1584×396)</title>
 <meta name="viewport" content="width=1584" />
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -18,7 +18,7 @@
   html, body { margin: 0; padding: 0; background: #1a1a1a; font-family: var(--body); }
   *, *::before, *::after { box-sizing: border-box; }
 
-  /* Stage — fixed LinkedIn banner dimensions, scaled to viewport */
+  /* Stage, fixed LinkedIn banner dimensions, scaled to viewport */
   .stage {
     width: 1584px; height: 396px;
     position: relative;
@@ -28,7 +28,7 @@
     box-shadow: 0 30px 80px rgba(0,0,0,0.5);
   }
 
-  /* Full-bleed portrait band — the Cenacle-style row */
+  /* Full-bleed portrait band, the Cenacle-style row */
   .band {
     position: absolute;
     left: 0; right: 0; bottom: 0;
@@ -50,7 +50,7 @@
     pointer-events: none; z-index: 1;
   }
 
-  /* Left column — wordmark + tagline */
+  /* Left column, wordmark + tagline */
   .left {
     position: absolute; top: 44px; left: 56px; z-index: 3;
     color: var(--ink);
@@ -75,7 +75,7 @@
     color: var(--ink); max-width: 480px;
   }
 
-  /* Right column — badges stacked on top, byline below */
+  /* Right column, badges stacked on top, byline below */
   .right {
     position: absolute; top: 44px; right: 56px; z-index: 3;
     display: flex; flex-direction: column; align-items: flex-end; gap: 14px;
@@ -103,21 +103,21 @@
     letter-spacing: 0.3px;
   }
 
-  /* The subtle byline, rotated — editorial touch from the covers */
+  /* The subtle byline, rotated, editorial touch from the covers */
   .byline {
     position: absolute; left: 18px; top: 44px; z-index: 3;
     writing-mode: vertical-rl; transform: rotate(180deg);
     font-family: var(--body); font-size: 12px; color: var(--ink-soft); letter-spacing: 0.3px;
   }
 
-  /* Footer meta — tiny URL baseline */
+  /* Footer meta, tiny URL baseline */
   .meta {
     position: absolute; left: 56px; bottom: 20px; z-index: 3;
     font-family: var(--mono); font-size: 12px; letter-spacing: 1.4px;
     text-transform: uppercase; color: var(--ink-soft);
   }
 
-  /* Export helper — printable page: exact banner, no chrome */
+  /* Export helper, printable page: exact banner, no chrome */
   @media print {
     body { background: #fff; }
     .stage { margin: 0; box-shadow: none; }
@@ -143,12 +143,12 @@
 </head>
 <body>
 
-<div class="toolbar"><b>Chit-Chats</b> — LinkedIn banner · 1584 × 396 px</div>
+<div class="toolbar"><b>Chit-Chats</b>, LinkedIn banner · 1584 × 396 px</div>
 
 <div class="stage" id="banner">
 
   <!-- Vertical byline at far left -->
-  <div class="byline">— Riccardo Murciano · Host</div>
+  <div class="byline">Riccardo Murciano · Host</div>
 
   <!-- Left: wordmark + tagline -->
   <div class="left">

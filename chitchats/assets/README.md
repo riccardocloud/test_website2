@@ -1,6 +1,6 @@
 # Asset folders
 
-Place real images here to override the built-in placeholders. The site falls back to CSS-rendered monograms when files are missing — no errors, just defaults.
+Place real images here to override the built-in placeholders. The site falls back to CSS-rendered monograms when files are missing, no errors, just defaults.
 
 ## guests/
 Square portraits, min 600×600, WebP or JPG. Filename = episode slug:
@@ -20,4 +20,4 @@ Square portraits, min 600×600, WebP or JPG. Filename = episode slug:
 SVG preferred. Filename = lowercase-hyphenated org name: `mckinsey.svg`, `tesla.svg`, etc.
 
 ## covers/
-Optional — to replace a generated episode cover with a real designed one (same aspect ratio, 1:1).
+Optional, to replace a generated episode cover with a real designed one (same aspect ratio, 1:1).
